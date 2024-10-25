@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\IlnurBox.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\IlnurBox.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\IlnurBoxEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\IlnurBox">
+      <UniqueIdentifier>{42BAB888-A8A9-3B2D-B048-27590C9946E7}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\IlnurBox\IlnurBox.Build.cs">
+      <Filter>Source\IlnurBox</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\IlnurBox\IlnurBox.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\IlnurBox.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\MainCharacter.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\MainCharacter.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\MyGameModeBase.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\MyGameModeBase.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

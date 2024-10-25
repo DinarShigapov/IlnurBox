@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "IlnurBox",
+			"Path": "..\\Source\\IlnurBox.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "IlnurBoxEditor",
+			"Path": "..\\Source\\IlnurBoxEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
