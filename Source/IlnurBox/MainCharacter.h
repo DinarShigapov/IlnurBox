@@ -67,6 +67,7 @@ private:
 	void Run(const FInputActionValue& Value);
 	void StopRun(const FInputActionValue& Value);
 
+
 	void StartCrouch(const FInputActionValue& Value);
 	void StopCrouch(const FInputActionValue& Value);
 

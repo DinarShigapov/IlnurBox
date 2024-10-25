@@ -22,6 +22,7 @@ AMainCharacter::AMainCharacter()
 
 	RunSpeed = 500;
 	WalkSpeed = 200;
+
 }
 
 void AMainCharacter::BeginPlay()
@@ -80,6 +81,7 @@ void AMainCharacter::StopRun(const FInputActionValue& Value)
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
+
 
 void AMainCharacter::StartCrouch(const FInputActionValue& Value)
 {

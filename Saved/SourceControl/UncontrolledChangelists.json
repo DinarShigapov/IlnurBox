@@ -5,6 +5,9 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_MyMainCharacter.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/KeyBindings/Actions/IA_Run.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/KeyBindings/IMC_Player.uasset",
 				"C:/Unreal Projects/IlnurBox/Content/Blueprint/BP_MyGameModeBase.uasset",
 				"C:/Unreal Projects/IlnurBox/Content/Blueprint/BP_MyMainCharacter.uasset",
 				"C:/Unreal Projects/IlnurBox/Content/KeyBindings/Actions/IA_Move.uasset",
