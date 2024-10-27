@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "Engine/TimerHandle.h"
 #include "InputMappingContext.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -44,12 +45,55 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DamageSelfAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ActivateAbilityAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
+	TSubclassOf<AActor> ActorToSpawn;
+
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float Health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float MaxHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float Stamina;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float MaxStamina;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float Mana;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float MaxMana;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	bool bIsAlive;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float RunSpeed;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float WalkSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float bIsRunning;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float bIsJumping;
+
+
+
+
 public:
 	// Sets default values for this character's properties
 	AMainCharacter();
-
-	float RunSpeed;
-	float WalkSpeed;
 
 protected:
 	// Called when the game starts or when spawned
@@ -67,11 +111,36 @@ private:
 	void Run(const FInputActionValue& Value);
 	void StopRun(const FInputActionValue& Value);
 
-
 	void StartCrouch(const FInputActionValue& Value);
 	void StopCrouch(const FInputActionValue& Value);
 
+	void Jump(const FInputActionValue& Value);
+	void StopJump(const FInputActionValue& Value);
+
 	void Look(const FInputActionValue& Value);
 
+	void DamageSelf(const FInputActionValue& Value);
+	void ActivateAbility(const FInputActionValue& Value);
 
+	UFUNCTION()
+	void SpawnObject(FVector Loc, FRotator Rot);
+
+public:
+
+	void RegenerationHealth();
+	FTimerHandle RegenerationHealthHandle;
+
+	void RegenerationTick();
+	FTimerHandle RegenerationTickHandle;
+
+	void DecreaseStamina();
+	FTimerHandle DecreaseStaminaHandle;
+
+	void IncreaseStamina();
+	FTimerHandle IncreaseStaminaHandle;
+
+	void DecreaseMana();
+
+	void IncreaseMana();
+	FTimerHandle IncreaseManaHandle;
 };

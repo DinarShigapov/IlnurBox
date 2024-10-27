@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ILNURBOX_MainCharacter_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSpawnObject);
+
+
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMainCharacter(); \
 	friend struct Z_Construct_UClass_AMainCharacter_Statics; \
@@ -23,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(AMainCharacter)
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMainCharacter(AMainCharacter&&); \
@@ -35,12 +39,13 @@ public: \
 	NO_API virtual ~AMainCharacter();
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_18_PROLOG
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_21_GENERATED_BODY \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_19_PROLOG
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_21_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_21_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
