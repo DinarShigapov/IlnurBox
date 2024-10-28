@@ -83,6 +83,9 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	float WalkSpeed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float FootstepInterval;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float bIsRunning;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
@@ -120,12 +123,15 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
-
-private:
+	UFUNCTION(BlueprintCallable, Category = "MovementBP")
 	void Move(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable, Category = "MovementBP")
 	void Run(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable, Category = "MovementBP")
 	void StopRun();
+private:
 
 	void StartCrouch(const FInputActionValue& Value);
 	void StopCrouch(const FInputActionValue& Value);

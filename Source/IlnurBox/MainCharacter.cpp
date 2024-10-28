@@ -22,6 +22,7 @@ AMainCharacter::AMainCharacter()
 
 	RunSpeed = 500;
 	WalkSpeed = 300;
+	FootstepInterval = 0.3;
 
 	MaxHealth = 1;
 	MaxStamina = 1;
@@ -29,8 +30,7 @@ AMainCharacter::AMainCharacter()
 
 	AddHealth = 0.1;
 	AddMana = 0.05;
-	AddStamina = 0.1;
-
+	AddStamina = 0.1; 
 	ReduceHealth = 0.1;
 	ReduceMana = 0.1;
 	ReduceStamina = 0.1;
@@ -100,6 +100,7 @@ void AMainCharacter::Run(const FInputActionValue& Value)
 {
 	if (CurrentStamina > 0)
 	{
+		FootstepInterval = 0.20;
 		GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
 		GetWorldTimerManager().SetTimer(DecreaseStaminaHandle, this, &AMainCharacter::DecreaseStamina, 1, true, 0.0f);
 		bIsRunning = true;
@@ -110,6 +111,7 @@ void AMainCharacter::StopRun()
 {
 	if (bIsRunning)
 	{
+		FootstepInterval = 0.3;
 		GetWorldTimerManager().ClearTimer(DecreaseStaminaHandle);
 		bIsRunning = false;
 	}

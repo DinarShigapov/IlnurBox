@@ -9,13 +9,17 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FInputActionValue;
 #ifdef ILNURBOX_MainCharacter_generated_h
 #error "MainCharacter.generated.h already included, missing '#pragma once' in MainCharacter.h"
 #endif
 #define ILNURBOX_MainCharacter_generated_h
 
 #define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execSpawnObject);
+	DECLARE_FUNCTION(execSpawnObject); \
+	DECLARE_FUNCTION(execStopRun); \
+	DECLARE_FUNCTION(execRun); \
+	DECLARE_FUNCTION(execMove);
 
 
 #define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_22_INCLASS_NO_PURE_DECLS \
