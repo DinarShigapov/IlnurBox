@@ -21,15 +21,25 @@ AMainCharacter::AMainCharacter()
 	bUseControllerRotationRoll = false;
 
 	RunSpeed = 500;
-	WalkSpeed = 200;
-	bIsAlive = true;
+	WalkSpeed = 300;
+
 	MaxHealth = 1;
-	Health = 0.5f;
 	MaxStamina = 1;
-	Stamina = 0.5f;
-	Mana = 1;
 	MaxMana = 1;
 
+	AddHealth = 0.1;
+	AddMana = 0.05;
+	AddStamina = 0.1;
+
+	ReduceHealth = 0.1;
+	ReduceMana = 0.1;
+	ReduceStamina = 0.1;
+
+	CurrentHealth = MaxHealth;
+	CurrentStamina = MaxStamina;
+	CurrentMana = MaxMana;
+
+	bIsAlive = true;
 	bIsRunning = false;
 	bIsJumping = false;
 
@@ -44,11 +54,10 @@ void AMainCharacter::BeginPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using Ilnur."));
 
 	GetWorldTimerManager().SetTimer(RegenerationHealthHandle, this, &AMainCharacter::RegenerationHealth, 1, false, 2.0f);
-	GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, true, 3.0f);
+	GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, false, 2.0f);
+	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
 }
 
-
-// Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -71,7 +80,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Completed, this, &AMainCharacter::StopRun);
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &AMainCharacter::StartCrouch);
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Completed, this, &AMainCharacter::StopCrouch);
-
 		EnhancedInputComponent->BindAction(DamageSelfAction, ETriggerEvent::Triggered, this, &AMainCharacter::DamageSelf);
 		EnhancedInputComponent->BindAction(ActivateAbilityAction, ETriggerEvent::Triggered, this, &AMainCharacter::ActivateAbility);
 	}
@@ -90,7 +98,7 @@ void AMainCharacter::Move(const FInputActionValue& Value)
 
 void AMainCharacter::Run(const FInputActionValue& Value)
 {
-	if (Stamina > 0)
+	if (CurrentStamina > 0)
 	{
 		GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
 		GetWorldTimerManager().SetTimer(DecreaseStaminaHandle, this, &AMainCharacter::DecreaseStamina, 1, true, 0.0f);
@@ -98,7 +106,7 @@ void AMainCharacter::Run(const FInputActionValue& Value)
 	}
 }
 
-void AMainCharacter::StopRun(const FInputActionValue& Value)
+void AMainCharacter::StopRun()
 {
 	if (bIsRunning)
 	{
@@ -122,7 +130,7 @@ void AMainCharacter::StopCrouch(const FInputActionValue& Value)
 
 void AMainCharacter::Jump(const FInputActionValue& Value)
 {
-	if (Stamina > 0)
+	if (!GetMovementComponent()->IsFalling())
 	{
 		bIsJumping = true;
 		bPressedJump = true;
@@ -137,11 +145,7 @@ void AMainCharacter::StopJump(const FInputActionValue& Value)
 	bPressedJump = false;
 	ResetJumpState();
 
-	GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, true, 3.0f);
 }
-
-
-
 
 void AMainCharacter::Look(const FInputActionValue& Value)
 {
@@ -156,17 +160,16 @@ void AMainCharacter::Look(const FInputActionValue& Value)
 
 void AMainCharacter::DamageSelf(const FInputActionValue& Value)
 {
-	float DamageDone = 0.5;
 
-	if (DamageDone >= Health)
+	if (ReduceHealth >= CurrentHealth)
 	{
-		Health = 0;
+		CurrentHealth = 0;
 		bIsAlive = false;
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("You're dead."));
 	}
 	else
 	{
-		Health -= DamageDone;
+		CurrentHealth -= ReduceHealth;
 	}
 
 
@@ -179,50 +182,61 @@ void AMainCharacter::DecreaseStamina()
 	if (bIsCrouched)
 		return;
 
-	if (GetWorldTimerManager().IsTimerActive(IncreaseStaminaHandle))
-		GetWorldTimerManager().ClearTimer(IncreaseStaminaHandle);
+	if (GetWorldTimerManager().IsTimerActive(IncreaseStaminaTickHandle))
+		GetWorldTimerManager().ClearTimer(IncreaseStaminaTickHandle);
 
 	if (bIsRunning || bIsJumping)
 	{
 		
-		Stamina -= 0.01;
+		if (ReduceStamina > CurrentStamina)
+		{
+			CurrentStamina = 0;
+			StopRun();
+		}
+		else
+		{
+			CurrentStamina -= ReduceStamina;
+		}
+		
 
-		GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, true, 3.0f);
+		GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, false, 1.5f);
 	}
 
 }
 
 void AMainCharacter::IncreaseStamina()
 {
-	float AddingStamina = 0.1;
+	GetWorldTimerManager().SetTimer(IncreaseStaminaTickHandle, this, &AMainCharacter::IncreaseStaminaTick, 1, true, 0.0f);
+}
 
-	if (Stamina + AddingStamina > MaxStamina)
+void AMainCharacter::IncreaseStaminaTick()
+{
+	if (CurrentStamina + AddStamina > MaxStamina)
 	{
-		Stamina = MaxStamina;
+		CurrentStamina = MaxStamina;
 	}
 	else
 	{
-		Stamina += AddingStamina;
+		CurrentStamina += AddStamina;
 	}
 
-	if (Stamina == MaxStamina)
+	if (CurrentStamina == MaxStamina)
 	{
-		GetWorldTimerManager().ClearTimer(IncreaseStaminaHandle);
+		GetWorldTimerManager().ClearTimer(IncreaseStaminaTickHandle);
 	}
 }
 
 void AMainCharacter::RegenerationHealth() 
 {
-	GetWorldTimerManager().SetTimer(RegenerationTickHandle, this, &AMainCharacter::RegenerationTick, 1, true, 0.1f);
+	GetWorldTimerManager().SetTimer(RegenerationTickHandle, this, &AMainCharacter::RegenerationTick, 1, true, 0.0f);
 }
 
 void AMainCharacter::RegenerationTick()
 {
-	float AddingHealth = 0.05;
 
-	if (Health + AddingHealth > MaxHealth)
+	if (CurrentHealth + AddHealth > MaxHealth)
 	{
-		Health = MaxHealth;
+		CurrentHealth = MaxHealth;
 	}
 	else if (bIsAlive == false)
 	{
@@ -230,15 +244,14 @@ void AMainCharacter::RegenerationTick()
 	}
 	else
 	{
-		Health += AddingHealth;
+		CurrentHealth += AddHealth;
 	}
 
-	if (Health == MaxHealth)
+	if (CurrentHealth == MaxHealth)
 	{
 		GetWorldTimerManager().ClearTimer(RegenerationTickHandle);
 	}
 }
-
 
 void AMainCharacter::ActivateAbility(const FInputActionValue& Value)
 {
@@ -246,60 +259,62 @@ void AMainCharacter::ActivateAbility(const FInputActionValue& Value)
 	FRotator Rot;
 
 	GetController()->GetPlayerViewPoint(Loc, Rot);
+	
+	FVector SpawnLocation = Loc + (Rot.Vector() * 500.0f);
 
-	if (Mana >= 0.5)
+	if (CurrentMana >= 0.5)
 	{
-		SpawnObject(Loc, Rot);
+		SpawnObject(SpawnLocation, Rot);
 	}
 
 	DecreaseMana();
-	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, true, 2.0f);
+	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
 }
 
 void AMainCharacter::SpawnObject(FVector Loc, FRotator Rot)
 {
-	Loc.X += 50;
-	
 	FActorSpawnParameters SpawnParams;
 	AActor* SpawnedActorRef = GetWorld()->SpawnActor<AActor>(ActorToSpawn, Loc, Rot, SpawnParams);
 }
 
 void AMainCharacter::IncreaseMana()
 {
-	float AddingMana = 0.1;
+	GetWorldTimerManager().SetTimer(IncreaseManaTickHandle, this, &AMainCharacter::IncreaseManaTick, 1, true, 0.0f);
+}
 
-	if (Mana + AddingMana > MaxMana)
+void AMainCharacter::IncreaseManaTick()
+{
+	if (CurrentMana + AddMana > MaxMana)
 	{
-		Mana = MaxMana;
+		CurrentMana = MaxMana;
 	}
 	else
 	{
-		Mana += AddingMana;
+		CurrentMana += AddMana;
 	}
 
-	if (Mana == MaxMana)
+	if (CurrentMana == MaxMana)
 	{
-		GetWorldTimerManager().ClearTimer(IncreaseManaHandle);
+		GetWorldTimerManager().ClearTimer(IncreaseManaTickHandle);
 	}
 }
 
 void AMainCharacter::DecreaseMana()
 {
 
-	if (GetWorldTimerManager().IsTimerActive(IncreaseManaHandle))
-		GetWorldTimerManager().ClearTimer(IncreaseManaHandle);
+	if (GetWorldTimerManager().IsTimerActive(IncreaseManaTickHandle))
+		GetWorldTimerManager().ClearTimer(IncreaseManaTickHandle);
 
-	float AmountOfManaReceived = 0.5;
 
-	if (AmountOfManaReceived >= Mana)
+	if (ReduceMana >= CurrentMana)
 	{
-		Mana = 0;
+		CurrentMana = 0;
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("The mana is over."));
 	}
 	else
 	{
-		Mana -= AmountOfManaReceived;
+		CurrentMana -= ReduceMana;
 	}
 
-	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, true, 2.0f);
+	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
 }

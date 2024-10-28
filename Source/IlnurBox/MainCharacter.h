@@ -56,19 +56,19 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float Health;
+	float CurrentHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float MaxHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float Stamina;
+	float CurrentStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float MaxStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float Mana;
+	float CurrentMana;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float MaxMana;
@@ -88,7 +88,23 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float bIsJumping;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float AddMana;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float AddHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float AddStamina;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float ReduceMana;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float ReduceHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float ReduceStamina;
 
 
 public:
@@ -109,7 +125,7 @@ public:
 private:
 	void Move(const FInputActionValue& Value);
 	void Run(const FInputActionValue& Value);
-	void StopRun(const FInputActionValue& Value);
+	void StopRun();
 
 	void StartCrouch(const FInputActionValue& Value);
 	void StopCrouch(const FInputActionValue& Value);
@@ -139,8 +155,14 @@ public:
 	void IncreaseStamina();
 	FTimerHandle IncreaseStaminaHandle;
 
+	void IncreaseStaminaTick();
+	FTimerHandle IncreaseStaminaTickHandle;
+
 	void DecreaseMana();
 
 	void IncreaseMana();
 	FTimerHandle IncreaseManaHandle;
+
+	void IncreaseManaTick();
+	FTimerHandle IncreaseManaTickHandle;
 };
