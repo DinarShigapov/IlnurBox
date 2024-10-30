@@ -260,11 +260,17 @@
     <None Include="..\..\IlnurBox.uproject"/>
     <None Include="..\..\Source\IlnurBox.Target.cs"/>
     <None Include="..\..\Source\IlnurBoxEditor.Target.cs"/>
+    <None Include="..\..\.gitattributes"/>
+    <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
+    <ClCompile Include="..\..\Source\IlnurBox\CharacterState.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\CharacterState.h"/>
     <None Include="..\..\Source\IlnurBox\IlnurBox.Build.cs"/>
     <ClCompile Include="..\..\Source\IlnurBox\IlnurBox.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

@@ -17,6 +17,7 @@ COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -75,30 +76,15 @@ DEFINE_FUNCTION(AMainCharacter::execMove)
 // Begin Class AMainCharacter Function Run
 struct Z_Construct_UFunction_AMainCharacter_Run_Statics
 {
-	struct MainCharacter_eventRun_Parms
-	{
-		FInputActionValue Value;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "MovementBP" },
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[] = {
-		{ "NativeConst", "" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FStructPropertyParams NewProp_Value;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMainCharacter_Run_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventRun_Parms, Value), Z_Construct_UScriptStruct_FInputActionValue, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Value_MetaData), NewProp_Value_MetaData) }; // 494646648
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_Run_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_Run_Statics::NewProp_Value,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_Run_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_Run_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "Run", nullptr, nullptr, Z_Construct_UFunction_AMainCharacter_Run_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_Run_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMainCharacter_Run_Statics::MainCharacter_eventRun_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_Run_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_Run_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AMainCharacter_Run_Statics::MainCharacter_eventRun_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_Run_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "Run", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_Run_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_Run_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_AMainCharacter_Run()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -110,10 +96,9 @@ UFunction* Z_Construct_UFunction_AMainCharacter_Run()
 }
 DEFINE_FUNCTION(AMainCharacter::execRun)
 {
-	P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->Run(Z_Param_Out_Value);
+	P_THIS->Run();
 	P_NATIVE_END;
 }
 // End Class AMainCharacter Function Run
@@ -326,6 +311,21 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "Category", "Characteristic" },
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalWalk_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalRun_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalCrouch_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsRunning_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
@@ -366,6 +366,21 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "Category", "Characteristic" },
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepSFX_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepGround_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepGrass_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Characteristic" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArm;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
@@ -389,19 +404,27 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_RunSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WalkSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_FootstepInterval;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_bIsRunning;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_bIsJumping;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_FootstepIntervalWalk;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_FootstepIntervalRun;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_FootstepIntervalCrouch;
+	static void NewProp_bIsRunning_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsRunning;
+	static void NewProp_bIsJumping_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsJumping;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AddMana;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AddHealth;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AddStamina;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReduceMana;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReduceHealth;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReduceStamina;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FootstepSFX;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FootstepGround;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FootstepGrass;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMainCharacter_Move, "Move" }, // 2313451068
-		{ &Z_Construct_UFunction_AMainCharacter_Run, "Run" }, // 1214070462
+		{ &Z_Construct_UFunction_AMainCharacter_Run, "Run" }, // 844491250
 		{ &Z_Construct_UFunction_AMainCharacter_SpawnObject, "SpawnObject" }, // 1316035968
 		{ &Z_Construct_UFunction_AMainCharacter_StopRun, "StopRun" }, // 2312217206
 	};
@@ -436,14 +459,28 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMainCharacter_S
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_RunSpeed = { "RunSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, RunSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RunSpeed_MetaData), NewProp_RunSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_WalkSpeed = { "WalkSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, WalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WalkSpeed_MetaData), NewProp_WalkSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepInterval = { "FootstepInterval", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepInterval_MetaData), NewProp_FootstepInterval_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsRunning = { "bIsRunning", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, bIsRunning), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsRunning_MetaData), NewProp_bIsRunning_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsJumping = { "bIsJumping", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, bIsJumping), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsJumping_MetaData), NewProp_bIsJumping_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalWalk = { "FootstepIntervalWalk", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepIntervalWalk), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepIntervalWalk_MetaData), NewProp_FootstepIntervalWalk_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalRun = { "FootstepIntervalRun", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepIntervalRun), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepIntervalRun_MetaData), NewProp_FootstepIntervalRun_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalCrouch = { "FootstepIntervalCrouch", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepIntervalCrouch), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepIntervalCrouch_MetaData), NewProp_FootstepIntervalCrouch_MetaData) };
+void Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsRunning_SetBit(void* Obj)
+{
+	((AMainCharacter*)Obj)->bIsRunning = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsRunning = { "bIsRunning", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMainCharacter), &Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsRunning_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsRunning_MetaData), NewProp_bIsRunning_MetaData) };
+void Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsJumping_SetBit(void* Obj)
+{
+	((AMainCharacter*)Obj)->bIsJumping = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsJumping = { "bIsJumping", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMainCharacter), &Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsJumping_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsJumping_MetaData), NewProp_bIsJumping_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_AddMana = { "AddMana", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, AddMana), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AddMana_MetaData), NewProp_AddMana_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_AddHealth = { "AddHealth", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, AddHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AddHealth_MetaData), NewProp_AddHealth_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_AddStamina = { "AddStamina", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, AddStamina), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AddStamina_MetaData), NewProp_AddStamina_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceMana = { "ReduceMana", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, ReduceMana), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReduceMana_MetaData), NewProp_ReduceMana_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceHealth = { "ReduceHealth", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, ReduceHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReduceHealth_MetaData), NewProp_ReduceHealth_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceStamina = { "ReduceStamina", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, ReduceStamina), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReduceStamina_MetaData), NewProp_ReduceStamina_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepSFX = { "FootstepSFX", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepSFX), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepSFX_MetaData), NewProp_FootstepSFX_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepGround = { "FootstepGround", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepGround), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepGround_MetaData), NewProp_FootstepGround_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepGrass = { "FootstepGrass", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, FootstepGrass), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FootstepGrass_MetaData), NewProp_FootstepGrass_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_SpringArm,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_Camera,
@@ -466,6 +503,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_RunSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_WalkSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepInterval,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalWalk,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalRun,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepIntervalCrouch,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsRunning,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsJumping,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_AddMana,
@@ -474,6 +514,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceMana,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_ReduceStamina,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepSFX,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepGround,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FootstepGrass,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons[])() = {
@@ -516,10 +559,10 @@ AMainCharacter::~AMainCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 438936456U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 3177297705U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_839888606(TEXT("/Script/IlnurBox"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_3821668648(TEXT("/Script/IlnurBox"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

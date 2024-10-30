@@ -3,6 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CharacterState.h"
+#include "Engine/Console.h"
+#include "Engine/World.h"
+#include "Sound/SoundBase.h"
+#include "Sound/SoundCue.h"
+#include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
@@ -86,10 +92,19 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	float FootstepInterval;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float bIsRunning;
+	float FootstepIntervalWalk;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float bIsJumping;
+	float FootstepIntervalRun;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float FootstepIntervalCrouch;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	bool bIsRunning;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	bool bIsJumping;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float AddMana;
@@ -109,6 +124,19 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float ReduceStamina;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	USoundBase* FootstepSFX;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	USoundBase* FootstepGround;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	USoundBase* FootstepGrass;
+
+
+	bool bUpdateState;
+	EChatacterState ECurrentState;
+	EChatacterState EPreviousState;
 
 public:
 	// Sets default values for this character's properties
@@ -118,19 +146,27 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
 public:	
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void OnMovementModeChanged(EMovementMode PrevMovementMode, uint8 PrevCustomMode) override;
 
 	UFUNCTION(BlueprintCallable, Category = "MovementBP")
 	void Move(const FInputActionValue& Value);
 
+	void StopMove(const FInputActionValue& Value);
+
 	UFUNCTION(BlueprintCallable, Category = "MovementBP")
-	void Run(const FInputActionValue& Value);
+	void Run();
 
 	UFUNCTION(BlueprintCallable, Category = "MovementBP")
 	void StopRun();
+
+	void FootstepPlaySound();
+
+	void CheckPhysicMaterial();
 private:
 
 	void StartCrouch(const FInputActionValue& Value);
@@ -171,4 +207,7 @@ public:
 
 	void IncreaseManaTick();
 	FTimerHandle IncreaseManaTickHandle;
+
+	void DelaySoundPlay();
+	FTimerHandle DelaySoundPlayHandle;
 };
