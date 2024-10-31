@@ -36,6 +36,7 @@ struct Z_Construct_UEnum_IlnurBox_EChatacterState_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "CharacterState.h" },
 		{ "STAT_Crouch.Comment", "/**\n * \n */" },
 		{ "STAT_Crouch.DisplayName", "Crouch" },
@@ -93,10 +94,10 @@ UEnum* Z_Construct_UEnum_IlnurBox_EChatacterState()
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EChatacterState_StaticEnum, TEXT("EChatacterState"), &Z_Registration_Info_UEnum_EChatacterState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1581510797U) },
+		{ EChatacterState_StaticEnum, TEXT("EChatacterState"), &Z_Registration_Info_UEnum_EChatacterState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 557789258U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_2834085433(TEXT("/Script/IlnurBox"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_759846602(TEXT("/Script/IlnurBox"),
 	nullptr, 0,
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics::EnumInfo));

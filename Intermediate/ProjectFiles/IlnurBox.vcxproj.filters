@@ -38,6 +38,18 @@
     <ClInclude Include="..\..\Source\IlnurBox\CharacterState.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\Door.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\Door.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\FirstKit.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\FirstKit.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
     <None Include="..\..\Source\IlnurBox\IlnurBox.Build.cs">
       <Filter>Source\IlnurBox</Filter>
     </None>
@@ -45,6 +57,48 @@
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\IlnurBox\IlnurBox.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\InteractableBase.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\InteractableBase.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\InteractInterface.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\InteractInterface.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\Key.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\Key.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\KeyActor.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\KeyActor.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\LightBulb.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\LightBulb.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\LightSwitch.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\LightSwitch.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\Lock.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\Lock.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\MainCharacter.cpp">
@@ -57,6 +111,12 @@
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\IlnurBox\MyGameModeBase.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\Potion.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\Potion.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
   </ItemGroup>

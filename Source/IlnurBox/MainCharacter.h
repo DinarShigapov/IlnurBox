@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CharacterState.h"
+#include "InteractInterface.h"
 #include "Engine/Console.h"
 #include "Engine/World.h"
 #include "Sound/SoundBase.h"
@@ -20,10 +21,10 @@
 #include "EnhancedInputComponent.h"
 #include "MainCharacter.generated.h"
 
-
+class AKeyActor;
 
 UCLASS()
-class ILNURBOX_API AMainCharacter : public ACharacter
+class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 {
 	GENERATED_BODY()
 
@@ -57,15 +58,11 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ActivateAbilityAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* InteractAction;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
 	TSubclassOf<AActor> ActorToSpawn;
-
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float CurrentHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float MaxHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float CurrentStamina;
@@ -78,9 +75,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float MaxMana;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	bool bIsAlive;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float RunSpeed;
@@ -142,6 +136,19 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float MaxHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float CurrentHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	bool bIsAlive;
+
+	bool bIsStaminaProtected;
+
+	TArray<AKeyActor*> KeyActorArray;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -183,6 +190,9 @@ private:
 	UFUNCTION()
 	void SpawnObject(FVector Loc, FRotator Rot);
 
+	UFUNCTION(BlueprintCallable, Category = "Interacts")
+	void InteractWithActor();
+
 public:
 
 	void RegenerationHealth();
@@ -193,6 +203,9 @@ public:
 
 	void DecreaseStamina();
 	FTimerHandle DecreaseStaminaHandle;
+
+	void StopStaminaProtection();
+	FTimerHandle StaminaEffectTimerHandle;
 
 	void IncreaseStamina();
 	FTimerHandle IncreaseStaminaHandle;

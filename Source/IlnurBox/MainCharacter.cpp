@@ -51,6 +51,8 @@ AMainCharacter::AMainCharacter()
 	ECurrentState = STAT_Idle;
 	EPreviousState = ECurrentState;
 
+	bIsStaminaProtected = false;
+
 }
 
 void AMainCharacter::BeginPlay()
@@ -92,6 +94,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Completed, this, &AMainCharacter::StopCrouch);
 		EnhancedInputComponent->BindAction(DamageSelfAction, ETriggerEvent::Triggered, this, &AMainCharacter::DamageSelf);
 		EnhancedInputComponent->BindAction(ActivateAbilityAction, ETriggerEvent::Triggered, this, &AMainCharacter::ActivateAbility);
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AMainCharacter::InteractWithActor);
 	}
 }
 
@@ -154,7 +157,7 @@ void AMainCharacter::StopRun()
 	if (bIsCrouched)
 	{
 		GetCharacterMovement()->MaxWalkSpeed = GetCharacterMovement()->MaxWalkSpeedCrouched;
-		ECurrentState = STAT_Crouch;
+		ECurrentState = STAT_CrouchWalk;
 	}
 	else
 	{
@@ -177,7 +180,7 @@ void AMainCharacter::FootstepPlaySound()
 
 	switch (ECurrentState)
 	{
-		case STAT_Crouch:
+		case STAT_CrouchWalk:
 			FootstepInterval = FootstepIntervalCrouch;
 			break;
 		case STAT_Run:
@@ -252,7 +255,7 @@ void AMainCharacter::CheckPhysicMaterial()
 void AMainCharacter::StartCrouch(const FInputActionValue& Value)
 {
 	Crouch();
-	ECurrentState = STAT_Crouch;
+	ECurrentState = STAT_CrouchWalk;
 }
 
 void AMainCharacter::StopCrouch(const FInputActionValue& Value)
@@ -322,7 +325,7 @@ void AMainCharacter::DamageSelf(const FInputActionValue& Value)
 
 void AMainCharacter::DecreaseStamina()
 {
-	if (bIsCrouched || GetMovementComponent()->IsFalling())
+	if (bIsCrouched || GetMovementComponent()->IsFalling() || bIsStaminaProtected)
 		return;
 
 	if (GetWorldTimerManager().IsTimerActive(IncreaseStaminaTickHandle))
@@ -347,6 +350,12 @@ void AMainCharacter::DecreaseStamina()
 	}
 
 }
+
+void AMainCharacter::StopStaminaProtection() 
+{
+	bIsStaminaProtected = false;
+};
+
 
 void AMainCharacter::IncreaseStamina()
 {
@@ -419,6 +428,41 @@ void AMainCharacter::SpawnObject(FVector Loc, FRotator Rot)
 {
 	FActorSpawnParameters SpawnParams;
 	AActor* SpawnedActorRef = GetWorld()->SpawnActor<AActor>(ActorToSpawn, Loc, Rot, SpawnParams);
+}
+
+void AMainCharacter::InteractWithActor()
+{
+	FVector Loc;
+	FRotator Rot;
+	FVector Start;
+	FVector End;
+	FHitResult HitResult;
+
+
+	FCollisionQueryParams COQP;
+	COQP.AddIgnoredActor(this);
+	COQP.bReturnPhysicalMaterial = true;
+
+	GetController()->GetPlayerViewPoint(Loc, Rot);
+
+
+	Start = Loc;
+	End = Start + (Rot.Vector() * 200.0f);;
+
+
+	FCollisionResponseParams CollRes;
+	bool bHit = GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, COQP, CollRes);
+
+	if (bHit)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("HIT AN ACTOR"));
+		if (IInteractInterface* InteractInterface = Cast<IInteractInterface>(HitResult.GetActor()))
+		{
+			InteractInterface->OnInteract(this);
+		}
+	}
+
+	DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 3.0f, 0, 2.0f);
 }
 
 void AMainCharacter::IncreaseMana()

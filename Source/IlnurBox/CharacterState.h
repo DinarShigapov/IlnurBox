@@ -8,8 +8,7 @@
 /**
  * 
  */
-
-UENUM(BlueprintType)
+UENUM(Blueprintable, BlueprintType)
 enum EChatacterState
 {
 	STAT_Idle UMETA(DisplayName = "Idle"),
@@ -18,5 +17,4 @@ enum EChatacterState
 	STAT_Crouch UMETA(DisplayName = "Crouch"),
 	STAT_CrouchWalk UMETA(DisplayName = "CrouchWalk"),
 	STAT_Jump UMETA(DisplayName = "Jump")
-
 };
