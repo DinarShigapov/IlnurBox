@@ -30,5 +30,7 @@ public:
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ID", meta = (AllowPrivateAccess = "true"))
 	FString IdRequiredKey;
+	 
+	bool IsCheckKeyForDoor(AMainCharacter* Caller);
 
 };

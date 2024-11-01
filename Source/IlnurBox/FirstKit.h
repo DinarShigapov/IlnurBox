@@ -14,6 +14,9 @@ class ILNURBOX_API AFirstKit : public AActor, public IInteractInterface
 {
 	GENERATED_BODY()
 	
+
+	float AddPercentageHealth;
+
 public:	
 	// Sets default values for this actor's properties
 	AFirstKit();

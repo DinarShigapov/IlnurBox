@@ -19,9 +19,26 @@ void ADoor::BeginPlay()
 	
 }
 
+bool ADoor::IsCheckKeyForDoor(AMainCharacter* Caller)
+{
+	for (size_t i = 0; i < Caller->KeyActorArray.Num(); i++)
+	{
+		AKeyActor* key = Cast<AKeyActor>(Caller->KeyActorArray[i]);
+		if (key->IdKey == IdRequiredKey)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 void ADoor::OnInteract(AActor* Caller)
 {
+	AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
+	
+
 	if (bIsOpen)
 	{
 		FRotator NewRotation = FRotator(0.f, 0.f, 0.f);
@@ -30,19 +47,15 @@ void ADoor::OnInteract(AActor* Caller)
 	}
 	else
 	{
-		AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
-
-
-		for (size_t i = 0; i < InteractCaller->KeyActorArray.Num(); i++)
+		if (IdRequiredKey != TEXT(""))
 		{
-			AKeyActor* key = Cast<AKeyActor>(InteractCaller->KeyActorArray[i]);
-			if (key->IdKey == IdRequiredKey)
-			{
-				FRotator NewRotation = FRotator(0.f, -100.f, 0.f);
-				SetActorRotation(NewRotation);
-				bIsOpen = true;
-			}
+			if (!IsCheckKeyForDoor(InteractCaller))
+				return;
 		}
+
+		FRotator NewRotation = FRotator(0.f, -100.f, 0.f);
+		SetActorRotation(NewRotation);
+		bIsOpen = true;
 	}
 
 }

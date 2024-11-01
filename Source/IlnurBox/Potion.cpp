@@ -28,6 +28,8 @@ void APotion::OnInteract(AActor* Caller)
 		InteractCaller->bIsStaminaProtected = true;
 
 		GetWorld()->GetTimerManager().SetTimer(InteractCaller->StaminaEffectTimerHandle, InteractCaller, &AMainCharacter::StopStaminaProtection, 5.0f, false);
+
+		Destroy();
 	}
 }
 

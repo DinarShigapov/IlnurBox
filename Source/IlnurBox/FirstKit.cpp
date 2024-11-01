@@ -7,6 +7,8 @@ AFirstKit::AFirstKit()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
+	AddPercentageHealth = 0.25;
+
 }
 
 void AFirstKit::BeginPlay()
@@ -17,13 +19,25 @@ void AFirstKit::BeginPlay()
 
 void AFirstKit::OnInteract(AActor* Caller)
 {
+
 	if (Caller)
 	{
 		AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
 
 		if (InteractCaller->bIsAlive)
 		{
-			InteractCaller->CurrentHealth += InteractCaller->MaxHealth * 0.25;
+			float AddHealth = InteractCaller->CurrentHealth * AddPercentageHealth;
+
+			if (InteractCaller->CurrentHealth + AddHealth >= InteractCaller->MaxHealth)
+			{
+				InteractCaller->CurrentHealth = InteractCaller->MaxHealth;
+			}
+			else
+			{
+				InteractCaller->CurrentHealth += AddHealth;
+			}
+
+			Destroy();
 		}
 	}
 }

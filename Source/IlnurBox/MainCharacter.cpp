@@ -46,6 +46,9 @@ AMainCharacter::AMainCharacter()
 	bIsRunning = false;
 	bIsJumping = false;
 
+	bIsBlockedRun = false;
+	bIsBlockedJump = false;
+
 	bUpdateState = false;
 
 	ECurrentState = STAT_Idle;
@@ -132,6 +135,9 @@ void AMainCharacter::StopMove(const FInputActionValue& Value)
 
 void AMainCharacter::Run()
 {
+	if (bIsBlockedRun)
+		return;
+
 	if (CurrentStamina > 0 && !bIsCrouched)
 	{
 		if (!GetVelocity().IsNearlyZero())
@@ -276,6 +282,9 @@ void AMainCharacter::StopCrouch(const FInputActionValue& Value)
 
 void AMainCharacter::Jump(const FInputActionValue& Value)
 {
+	if (bIsBlockedJump)
+		return;
+
 	if (!GetMovementComponent()->IsFalling())
 	{
 		bIsJumping = true;
@@ -320,7 +329,7 @@ void AMainCharacter::DamageSelf(const FInputActionValue& Value)
 
 
 	GetWorldTimerManager().ClearTimer(RegenerationTickHandle);
-	GetWorldTimerManager().SetTimer(RegenerationHealthHandle, this, &AMainCharacter::RegenerationHealth, 1, false, 2.0f);
+	RegenerationHealth();
 }
 
 void AMainCharacter::DecreaseStamina()
@@ -381,7 +390,7 @@ void AMainCharacter::IncreaseStaminaTick()
 
 void AMainCharacter::RegenerationHealth() 
 {
-	GetWorldTimerManager().SetTimer(RegenerationTickHandle, this, &AMainCharacter::RegenerationTick, 0.1, true, 0.0f);
+	GetWorldTimerManager().SetTimer(RegenerationTickHandle, this, &AMainCharacter::RegenerationTick, 1.0f, true, 2.0f);
 }
 
 void AMainCharacter::RegenerationTick()

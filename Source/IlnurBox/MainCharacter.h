@@ -147,6 +147,9 @@ public:
 
 	bool bIsStaminaProtected;
 
+	bool bIsBlockedRun;
+	bool bIsBlockedJump;
+
 	TArray<AKeyActor*> KeyActorArray;
 
 protected:
