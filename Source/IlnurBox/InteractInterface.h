@@ -23,6 +23,8 @@ class ILNURBOX_API IInteractInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
+	bool Lootable;
+
 	virtual void OnInteract(AActor* Caller) {}
 
 	virtual void StartFocus() {}

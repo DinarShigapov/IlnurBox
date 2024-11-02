@@ -27,7 +27,7 @@ void AKeyActor::OnInteract(AActor* Caller)
     {
         AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
 
-        InteractCaller->KeyActorArray.Add(this);
+        InteractCaller->InvActorArray.Add(this);
 
         SetActorHiddenInGame(true);
         SetActorEnableCollision(false); 

@@ -21,7 +21,9 @@
 #include "EnhancedInputComponent.h"
 #include "MainCharacter.generated.h"
 
+class UUNoteWidget;
 class AKeyActor;
+class AHammer;
 
 UCLASS()
 class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
@@ -31,8 +33,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* SpringArm;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* Camera;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
@@ -60,6 +60,15 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* InteractAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* CancelAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* UseItemAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DropItemAction;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
 	TSubclassOf<AActor> ActorToSpawn;
@@ -136,6 +145,9 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UCameraComponent* Camera;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float MaxHealth;
 
@@ -151,6 +163,12 @@ public:
 	bool bIsBlockedJump;
 
 	TArray<AKeyActor*> KeyActorArray;
+
+	TArray<AActor*> InvActorArray;
+
+	UUNoteWidget* CloseWidget;
+
+	AActor* ObjectInHand;
 
 protected:
 	// Called when the game starts or when spawned
@@ -177,6 +195,12 @@ public:
 	void FootstepPlaySound();
 
 	void CheckPhysicMaterial();
+
+	void UseItemActor();
+
+	void DropItemActor();
+
+
 private:
 
 	void StartCrouch(const FInputActionValue& Value);
@@ -195,6 +219,9 @@ private:
 
 	UFUNCTION(BlueprintCallable, Category = "Interacts")
 	void InteractWithActor();
+
+	void Cancel();
+
 
 public:
 

@@ -21,13 +21,17 @@ void ADoor::BeginPlay()
 
 bool ADoor::IsCheckKeyForDoor(AMainCharacter* Caller)
 {
-	for (size_t i = 0; i < Caller->KeyActorArray.Num(); i++)
+	for (size_t i = 0; i < Caller->InvActorArray.Num(); i++)
 	{
-		AKeyActor* key = Cast<AKeyActor>(Caller->KeyActorArray[i]);
-		if (key->IdKey == IdRequiredKey)
+
+		if (AKeyActor* key = Cast<AKeyActor>(Caller->InvActorArray[i]))
 		{
-			return true;
+			if (key->IdKey == IdRequiredKey)
+			{
+				return true;
+			}
 		}
+
 	}
 
 	return false;
