@@ -23,7 +23,6 @@
 
 class UUNoteWidget;
 class AKeyActor;
-class AHammer;
 
 UCLASS()
 class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
@@ -63,12 +62,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* CancelAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* UseItemAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* DropItemAction;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
 	TSubclassOf<AActor> ActorToSpawn;
@@ -168,7 +161,6 @@ public:
 
 	UUNoteWidget* CloseWidget;
 
-	AActor* ObjectInHand;
 
 protected:
 	// Called when the game starts or when spawned
@@ -195,11 +187,6 @@ public:
 	void FootstepPlaySound();
 
 	void CheckPhysicMaterial();
-
-	void UseItemActor();
-
-	void DropItemActor();
-
 
 private:
 

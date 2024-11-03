@@ -2,7 +2,6 @@
 
 
 #include "MainCharacter.h"
-#include "Hammer.h"
 #include "UNoteWidget.h"
 
 
@@ -101,8 +100,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(ActivateAbilityAction, ETriggerEvent::Triggered, this, &AMainCharacter::ActivateAbility);
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AMainCharacter::InteractWithActor);
 		EnhancedInputComponent->BindAction(CancelAction, ETriggerEvent::Triggered, this, &AMainCharacter::Cancel);
-		EnhancedInputComponent->BindAction(UseItemAction, ETriggerEvent::Triggered, this, &AMainCharacter::UseItemActor);
-		EnhancedInputComponent->BindAction(DropItemAction, ETriggerEvent::Triggered, this, &AMainCharacter::DropItemActor);
 	}
 }
 
@@ -260,33 +257,6 @@ void AMainCharacter::CheckPhysicMaterial()
 		}
 	}
 	
-}
-
-void AMainCharacter::UseItemActor()
-{
-	if (ObjectInHand)
-	{
-		if (AHammer* HammerObject = Cast<AHammer>(ObjectInHand))
-		{
-			HammerObject->UseItem(this);
-		}
-	}
-}
-
-void AMainCharacter::DropItemActor()
-{
-	if (ObjectInHand)
-	{
-		FVector DropLocation = GetActorLocation() + (GetActorRotation().Vector() * 200.0f);
-
-		ObjectInHand->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-		ObjectInHand->SetActorLocation(DropLocation);
-		ObjectInHand->SetActorEnableCollision(true);
-		ObjectInHand->SetActorTickEnabled(true);
-
-		ObjectInHand = nullptr;
-
-	}
 }
 
 
