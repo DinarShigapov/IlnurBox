@@ -19,8 +19,6 @@ void AKeyActor::BeginPlay()
 	
 }
 
-
-
 void AKeyActor::OnInteract(AActor* Caller)
 {
     if (Caller)

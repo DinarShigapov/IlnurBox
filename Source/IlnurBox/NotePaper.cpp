@@ -5,6 +5,8 @@
 #include "UNoteWidget.h"
 #include "MainCharacter.h"
 
+UUNoteWidget* NoteWidget;
+
 // Sets default values
 ANotePaper::ANotePaper()
 {
@@ -28,7 +30,8 @@ void ANotePaper::OnInteract(AActor* Caller)
 	{
 		AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
 
-        UUNoteWidget* NoteWidget = CreateWidget<UUNoteWidget>(GetWorld(), NoteWidgetClass);
+
+        NoteWidget = CreateWidget<UUNoteWidget>(GetWorld(), NoteWidgetClass);
         if (NoteWidget)
         {
             InteractCaller->CloseWidget = NoteWidget;

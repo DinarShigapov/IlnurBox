@@ -59,7 +59,6 @@ void AHammer::UseItem(AMainCharacter* Caller)
 
 		Caller->GetController()->GetPlayerViewPoint(Loc, Rot);
 
-
 		Start = Loc;
 		End = Start + (Rot.Vector() * 200.0f);;
 
