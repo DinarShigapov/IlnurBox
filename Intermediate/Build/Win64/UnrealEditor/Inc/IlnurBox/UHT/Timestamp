@@ -1,11 +1,6 @@
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\BananaActor.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\BlockedActorTrigger.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\DeathTimerTrigger.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\CharacterState.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\DeathZoneTrigger.h
+C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\Door.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\FirstKit.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\HalfHealthTrigger.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\Hammer.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\InteractableBase.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\InteractInterface.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\KeyActor.h
@@ -15,9 +10,6 @@ C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\Lock.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\MainCharacter.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\MyGameModeBase.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\MyUserWidget.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\NotePaper.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\Potion.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\SoundZonaTrigger.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\SpawnCubeTrigger.h
+C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\NotePaper.h
 C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\UNoteWidget.h
-C:\Unreal Projects\IlnurBoxProject\Source\IlnurBox\Door.h
