@@ -22,23 +22,7 @@ void AFirstKit::OnInteract(AActor* Caller)
 
 	if (Caller)
 	{
-		AMainCharacter* InteractCaller = Cast<AMainCharacter>(Caller);
-
-		if (InteractCaller->bIsAlive)
-		{
-			float AddHealth = InteractCaller->CurrentHealth * AddPercentageHealth;
-
-			if (InteractCaller->CurrentHealth + AddHealth >= InteractCaller->MaxHealth)
-			{
-				InteractCaller->CurrentHealth = InteractCaller->MaxHealth;
-			}
-			else
-			{
-				InteractCaller->CurrentHealth += AddHealth;
-			}
-
-			Destroy();
-		}
+		Destroy();
 	}
 }
 
