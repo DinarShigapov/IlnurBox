@@ -33,34 +33,10 @@
     <Filter Include="Source\IlnurBox">
       <UniqueIdentifier>{42BAB888-A8A9-3B2D-B048-27590C9946E7}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\IlnurBox\BananaActor.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\BananaActor.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\BlockedActorTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\BlockedActorTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\CharacterState.cpp">
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\IlnurBox\CharacterState.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\DeathTimerTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\DeathTimerTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\DeathZoneTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\DeathZoneTrigger.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\Door.cpp">
@@ -75,16 +51,10 @@
     <ClInclude Include="..\..\Source\IlnurBox\FirstKit.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\HalfHealthTrigger.cpp">
+    <ClCompile Include="..\..\Source\IlnurBox\HealthComponent.cpp">
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\HalfHealthTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\Hammer.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\Hammer.h">
+    <ClInclude Include="..\..\Source\IlnurBox\HealthComponent.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
     <None Include="..\..\Source\IlnurBox\IlnurBox.Build.cs">
@@ -144,12 +114,6 @@
     <ClInclude Include="..\..\Source\IlnurBox\MyGameModeBase.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\MyUserWidget.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\MyUserWidget.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\NotePaper.cpp">
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
@@ -160,18 +124,6 @@
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\IlnurBox\Potion.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\SoundZonaTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\SoundZonaTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\SpawnCubeTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\SpawnCubeTrigger.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\UNoteWidget.cpp">

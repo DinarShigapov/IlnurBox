@@ -2,6 +2,7 @@
 
 
 #include "MainCharacter.h"
+#include "HealthComponent.h"
 #include "UNoteWidget.h"
 
 
@@ -11,6 +12,8 @@ AMainCharacter::AMainCharacter()
  
 	PrimaryActorTick.bCanEverTick = false;
 
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+	StaminaComponent = CreateDefaultSubobject<UStaminaComponent>(TEXT("StaminaComponent"));
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	Camera->SetupAttachment((USceneComponent*)GetCapsuleComponent());
@@ -28,22 +31,6 @@ AMainCharacter::AMainCharacter()
 	FootstepIntervalCrouch = 0.7;
 	FootstepInterval = FootstepIntervalWalk;
 
-	MaxHealth = 1;
-	MaxStamina = 1;
-	MaxMana = 1;
-
-	AddHealth = 0.075;
-	AddMana = 0.05;
-	AddStamina = 0.1; 
-	ReduceHealth = 0.1;
-	ReduceMana = 0.1;
-	ReduceStamina = 0.1;
-
-	CurrentHealth = MaxHealth;
-	CurrentStamina = MaxStamina;
-	CurrentMana = MaxMana;
-
-	bIsAlive = true;
 	bIsRunning = false;
 	bIsJumping = false;
 
@@ -67,10 +54,18 @@ void AMainCharacter::BeginPlay()
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using IlnurBox."));
 
-	GetWorldTimerManager().SetTimer(RegenerationHealthHandle, this, &AMainCharacter::RegenerationHealth, 1, false, 2.0f);
-	GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, false, 2.0f);
-	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
+	if (HealthComponent)
+	{
+		HealthComponent->OnDeath.AddDynamic(this, &AMainCharacter::OnDeath);
+	}
 
+}
+
+void AMainCharacter::OnDeath()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Unlucky you died"));
+	this->SetActorLocation(FVector(0,0,0));
+	HealthComponent->SetCurrentHealth(100);
 }
 
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -96,7 +91,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Completed, this, &AMainCharacter::StopRun);
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &AMainCharacter::StartCrouch);
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Completed, this, &AMainCharacter::StopCrouch);
-		EnhancedInputComponent->BindAction(DamageSelfAction, ETriggerEvent::Triggered, this, &AMainCharacter::DamageSelf);
 		EnhancedInputComponent->BindAction(ActivateAbilityAction, ETriggerEvent::Triggered, this, &AMainCharacter::ActivateAbility);
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AMainCharacter::InteractWithActor);
 		EnhancedInputComponent->BindAction(CancelAction, ETriggerEvent::Triggered, this, &AMainCharacter::Cancel);
@@ -121,18 +115,11 @@ void AMainCharacter::Move(const FInputActionValue& Value)
 		AddMovementInput(GetActorRightVector(), MovementVector.X);
 	}
 
-	if (bIsRunning && !GetWorldTimerManager().IsTimerActive(DecreaseStaminaHandle))
-	{
-		GetWorldTimerManager().SetTimer(DecreaseStaminaHandle, this, &AMainCharacter::DecreaseStamina, 1, true, 0.0f);
-	}
 }
 
 void AMainCharacter::StopMove(const FInputActionValue& Value)
 {
-	if (bIsRunning && GetWorldTimerManager().IsTimerActive(DecreaseStaminaHandle))
-	{
-		GetWorldTimerManager().ClearTimer(DecreaseStaminaHandle);
-	}
+
 }
 
 void AMainCharacter::Run()
@@ -140,13 +127,8 @@ void AMainCharacter::Run()
 	if (bIsBlockedRun)
 		return;
 
-	if (CurrentStamina > 0 && !bIsCrouched)
+	if (!bIsCrouched)
 	{
-		if (!GetVelocity().IsNearlyZero())
-		{
-			GetWorldTimerManager().SetTimer(DecreaseStaminaHandle, this, &AMainCharacter::DecreaseStamina, 1, true, 0.0f);
-		}
-
 		GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
 		ECurrentState = STAT_Run;
 		bIsRunning = true;
@@ -158,7 +140,6 @@ void AMainCharacter::StopRun()
 {
 	if (bIsRunning)
 	{
-		GetWorldTimerManager().ClearTimer(DecreaseStaminaHandle);
 		bIsRunning = false;
 	}
 
@@ -292,7 +273,6 @@ void AMainCharacter::Jump(const FInputActionValue& Value)
 		bIsJumping = true;
 		bPressedJump = true;
 		JumpKeyHoldTime = 0.0f;
-		DecreaseStamina();
 	}
 }
 
@@ -315,108 +295,6 @@ void AMainCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
-void AMainCharacter::DamageSelf(const FInputActionValue& Value)
-{
-
-	if (ReduceHealth >= CurrentHealth)
-	{
-		CurrentHealth = 0;
-		bIsAlive = false;
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("You're dead."));
-	}
-	else
-	{
-		CurrentHealth -= ReduceHealth;
-	}
-
-
-	GetWorldTimerManager().ClearTimer(RegenerationTickHandle);
-	RegenerationHealth();
-}
-
-void AMainCharacter::DecreaseStamina()
-{
-	if (bIsCrouched || GetMovementComponent()->IsFalling() || bIsStaminaProtected)
-		return;
-
-	if (GetWorldTimerManager().IsTimerActive(IncreaseStaminaTickHandle))
-		GetWorldTimerManager().ClearTimer(IncreaseStaminaTickHandle);
-
-
-	if (bIsRunning || bIsJumping)
-	{
-		
-		if (ReduceStamina > CurrentStamina)
-		{
-			CurrentStamina = 0;
-			StopRun();
-		}
-		else
-		{
-			CurrentStamina -= ReduceStamina;
-		}
-		
-
-		GetWorldTimerManager().SetTimer(IncreaseStaminaHandle, this, &AMainCharacter::IncreaseStamina, 1, false, 1.5f);
-	}
-
-}
-
-void AMainCharacter::StopStaminaProtection() 
-{
-	bIsStaminaProtected = false;
-};
-
-
-void AMainCharacter::IncreaseStamina()
-{
-	GetWorldTimerManager().SetTimer(IncreaseStaminaTickHandle, this, &AMainCharacter::IncreaseStaminaTick, 0.1, true, 0.0f);
-}
-
-void AMainCharacter::IncreaseStaminaTick()
-{
-	if (CurrentStamina + AddStamina > MaxStamina)
-	{
-		CurrentStamina = MaxStamina;
-	}
-	else
-	{
-		CurrentStamina += AddStamina;
-	}
-
-	if (CurrentStamina == MaxStamina)
-	{
-		GetWorldTimerManager().ClearTimer(IncreaseStaminaTickHandle);
-	}
-}
-
-void AMainCharacter::RegenerationHealth() 
-{
-	GetWorldTimerManager().SetTimer(RegenerationTickHandle, this, &AMainCharacter::RegenerationTick, 1.0f, true, 2.0f);
-}
-
-void AMainCharacter::RegenerationTick()
-{
-
-	if (CurrentHealth + AddHealth > MaxHealth)
-	{
-		CurrentHealth = MaxHealth;
-	}
-	else if (bIsAlive == false)
-	{
-		GetWorldTimerManager().ClearTimer(RegenerationTickHandle);
-	}
-	else
-	{
-		CurrentHealth += AddHealth;
-	}
-
-	if (CurrentHealth == MaxHealth)
-	{
-		GetWorldTimerManager().ClearTimer(RegenerationTickHandle);
-	}
-}
-
 void AMainCharacter::ActivateAbility(const FInputActionValue& Value)
 {
 	FVector Loc;
@@ -426,13 +304,8 @@ void AMainCharacter::ActivateAbility(const FInputActionValue& Value)
 	
 	FVector SpawnLocation = Loc + (Rot.Vector() * 300.0f);
 
-	if (CurrentMana >= 0.5)
-	{
-		SpawnObject(SpawnLocation, Rot);
-	}
+	SpawnObject(SpawnLocation, Rot);
 
-	DecreaseMana();
-	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
 }
 
 void AMainCharacter::SpawnObject(FVector Loc, FRotator Rot)
@@ -496,45 +369,4 @@ void AMainCharacter::Cancel()
 	}
 }
 
-void AMainCharacter::IncreaseMana()
-{
-	GetWorldTimerManager().SetTimer(IncreaseManaTickHandle, this, &AMainCharacter::IncreaseManaTick, 0.1, true, 0.0f);
-}
 
-void AMainCharacter::IncreaseManaTick()
-{
-	if (CurrentMana + AddMana > MaxMana)
-	{
-		CurrentMana = MaxMana;
-	}
-	else
-	{
-		CurrentMana += AddMana;
-	}
-
-	if (CurrentMana == MaxMana)
-	{
-		GetWorldTimerManager().ClearTimer(IncreaseManaTickHandle);
-	}
-}
-
-
-void AMainCharacter::DecreaseMana()
-{
-
-	if (GetWorldTimerManager().IsTimerActive(IncreaseManaTickHandle))
-		GetWorldTimerManager().ClearTimer(IncreaseManaTickHandle);
-
-
-	if (ReduceMana >= CurrentMana)
-	{
-		CurrentMana = 0;
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("The mana is over."));
-	}
-	else
-	{
-		CurrentMana -= ReduceMana;
-	}
-
-	GetWorldTimerManager().SetTimer(IncreaseManaHandle, this, &AMainCharacter::IncreaseMana, 1, false, 2.0f);
-}

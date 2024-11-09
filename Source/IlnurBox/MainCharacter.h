@@ -19,6 +19,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "HealthComponent.h"
+#include "StaminaComponent.h"
 #include "MainCharacter.generated.h"
 
 class UUNoteWidget;
@@ -31,7 +33,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* SpringArm;
-
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
@@ -52,9 +53,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 	UInputAction* LookAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* DamageSelfAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ActivateAbilityAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -65,18 +63,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 
 	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
 	TSubclassOf<AActor> ActorToSpawn;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float CurrentStamina;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float MaxStamina;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float CurrentMana;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float MaxMana;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float RunSpeed;
@@ -102,24 +88,6 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	bool bIsJumping;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float AddMana;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float AddHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float AddStamina;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float ReduceMana;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float ReduceHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float ReduceStamina;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	USoundBase* FootstepSFX;
 
@@ -129,9 +97,10 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	USoundBase* FootstepGrass;
 
-
 	bool bUpdateState;
+
 	EChatacterState ECurrentState;
+
 	EChatacterState EPreviousState;
 
 public:
@@ -141,17 +110,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* Camera;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float MaxHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	float CurrentHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
-	bool bIsAlive;
 
 	bool bIsStaminaProtected;
-
 	bool bIsBlockedRun;
 	bool bIsBlockedJump;
 
@@ -165,6 +125,15 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UHealthComponent* HealthComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UStaminaComponent* StaminaComponent;
+
+	UFUNCTION()
+	void OnDeath();
 
 
 public:	
@@ -198,7 +167,6 @@ private:
 
 	void Look(const FInputActionValue& Value);
 
-	void DamageSelf(const FInputActionValue& Value);
 	void ActivateAbility(const FInputActionValue& Value);
 
 	UFUNCTION()
@@ -211,32 +179,6 @@ private:
 
 
 public:
-
-	void RegenerationHealth();
-	FTimerHandle RegenerationHealthHandle;
-
-	void RegenerationTick();
-	FTimerHandle RegenerationTickHandle;
-
-	void DecreaseStamina();
-	FTimerHandle DecreaseStaminaHandle;
-
-	void StopStaminaProtection();
-	FTimerHandle StaminaEffectTimerHandle;
-
-	void IncreaseStamina();
-	FTimerHandle IncreaseStaminaHandle;
-
-	void IncreaseStaminaTick();
-	FTimerHandle IncreaseStaminaTickHandle;
-
-	void DecreaseMana();
-
-	void IncreaseMana();
-	FTimerHandle IncreaseManaHandle;
-
-	void IncreaseManaTick();
-	FTimerHandle IncreaseManaTickHandle;
 
 	void DelaySoundPlay();
 	FTimerHandle DelaySoundPlayHandle;
