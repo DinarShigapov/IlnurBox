@@ -20,7 +20,6 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "HealthComponent.h"
-#include "StaminaComponent.h"
 #include "MainCharacter.generated.h"
 
 class UUNoteWidget;
@@ -129,8 +128,6 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UHealthComponent* HealthComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStaminaComponent* StaminaComponent;
 
 	UFUNCTION()
 	void OnDeath();
