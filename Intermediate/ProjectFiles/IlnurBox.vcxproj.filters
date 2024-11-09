@@ -133,4 +133,14 @@
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\IlnurBox\StaminaComponent.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\IlnurBox\StaminaComponent.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -13,7 +13,6 @@ AMainCharacter::AMainCharacter()
 	PrimaryActorTick.bCanEverTick = false;
 
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
-	StaminaComponent = CreateDefaultSubobject<UStaminaComponent>(TEXT("StaminaComponent"));
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	Camera->SetupAttachment((USceneComponent*)GetCapsuleComponent());

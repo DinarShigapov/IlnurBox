@@ -329,9 +329,11 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\IlnurBox\Potion.h" />
+    <ClCompile Include="..\..\Source\IlnurBox\StaminaComponent.cpp" />
     <ClCompile Include="..\..\Source\IlnurBox\UNoteWidget.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\StaminaComponent.h" />
     <ClInclude Include="..\..\Source\IlnurBox\UNoteWidget.h" />
   </ItemGroup>
   <PropertyGroup>
