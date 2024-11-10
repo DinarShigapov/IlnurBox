@@ -8,6 +8,7 @@ AFirstKit::AFirstKit()
 	PrimaryActorTick.bCanEverTick = false;
 
 	AddPercentageHealth = 0.25;
+	Lootable = true;
 
 }
 
@@ -20,10 +21,6 @@ void AFirstKit::BeginPlay()
 void AFirstKit::OnInteract(AActor* Caller)
 {
 
-	if (Caller)
-	{
-		Destroy();
-	}
 }
 
 

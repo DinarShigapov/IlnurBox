@@ -3,6 +3,7 @@
 
 #include "MainCharacter.h"
 #include "HealthComponent.h"
+#include "StaminaComponent.h"
 #include "UNoteWidget.h"
 
 
@@ -13,6 +14,7 @@ AMainCharacter::AMainCharacter()
 	PrimaryActorTick.bCanEverTick = false;
 
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+	StaminaComponent = CreateDefaultSubobject<UStaminaComponent>(TEXT("StaminaComponent"));
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	Camera->SetupAttachment((USceneComponent*)GetCapsuleComponent());
@@ -128,11 +130,15 @@ void AMainCharacter::Run()
 
 	if (!bIsCrouched)
 	{
-		GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
-		ECurrentState = STAT_Run;
-		bIsRunning = true;
-	}
+		if (StaminaComponent->CanPerformAction(10))
+		{
+			GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
+			ECurrentState = STAT_Run;
+			bIsRunning = true;
 
+			GetWorldTimerManager().SetTimer(RunningHandle, this, &AMainCharacter::Running, 0.1f, true);
+		}
+	}
 }
 
 void AMainCharacter::StopRun()
@@ -152,8 +158,24 @@ void AMainCharacter::StopRun()
 		GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 		ECurrentState = STAT_Walk;
 	}
+
+	GetWorldTimerManager().ClearTimer(RunningHandle);
 }
 
+void AMainCharacter::Running()
+{
+	if (GetMovementComponent()->IsFalling())
+		return;
+
+	if (StaminaComponent->CanPerformAction(0.5))
+	{
+		StaminaComponent->ConsumeStamina(0.5);;
+	}
+	else
+	{
+		StopRun();
+	}
+}
 
 void AMainCharacter::FootstepPlaySound()
 {
@@ -272,7 +294,13 @@ void AMainCharacter::Jump(const FInputActionValue& Value)
 		bIsJumping = true;
 		bPressedJump = true;
 		JumpKeyHoldTime = 0.0f;
+
+		if (StaminaComponent->CanPerformAction(1.0))
+		{
+			StaminaComponent->ConsumeStamina(1.0);;
+		}
 	}
+
 }
 
 void AMainCharacter::StopJump(const FInputActionValue& Value)
@@ -343,9 +371,9 @@ void AMainCharacter::InteractWithActor()
 		{
 			InteractInterface->OnInteract(this);
 
-			if (InvActorArray.Num() == 3)
+			if (InteractInterface->Lootable)
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Everything is collected."));
+				HitResult.GetActor()->Destroy();
 			}
 		}
 	}
@@ -367,5 +395,4 @@ void AMainCharacter::Cancel()
 		bIsBlockedRun = false;
 	}
 }
-
 

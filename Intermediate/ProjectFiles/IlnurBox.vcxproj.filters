@@ -126,6 +126,12 @@
     <ClInclude Include="..\..\Source\IlnurBox\Potion.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\IlnurBox\StaminaComponent.cpp">
+      <Filter>Source\IlnurBox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IlnurBox\StaminaComponent.h">
+      <Filter>Source\IlnurBox</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\IlnurBox\UNoteWidget.cpp">
       <Filter>Source\IlnurBox</Filter>
     </ClCompile>
@@ -134,13 +140,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\IlnurBox\StaminaComponent.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\IlnurBox\StaminaComponent.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
+    <Filter Include="Source\IlnurBox\Private">
+      <UniqueIdentifier>{ce54b8db-1b87-47f0-8711-ee0cae48e4c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\IlnurBox\Public">
+      <UniqueIdentifier>{f8b0c591-43bc-4140-aadd-d2a523cbceae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
