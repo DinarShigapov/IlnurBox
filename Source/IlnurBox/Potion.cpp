@@ -7,7 +7,7 @@
 APotion::APotion()
 {
 	PrimaryActorTick.bCanEverTick = false;
-
+	Lootable = true;
 }
 
 void APotion::BeginPlay()
@@ -18,9 +18,6 @@ void APotion::BeginPlay()
 
 void APotion::OnInteract(AActor* Caller)
 {
-	if (Caller)
-	{
-		Destroy();
-	}
+
 }
 

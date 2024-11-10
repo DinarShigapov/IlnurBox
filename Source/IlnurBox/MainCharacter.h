@@ -20,6 +20,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "HealthComponent.h"
+#include "StaminaComponent.h"
 #include "MainCharacter.generated.h"
 
 class UUNoteWidget;
@@ -109,15 +110,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* Camera;
 
-
 	bool bIsStaminaProtected;
 	bool bIsBlockedRun;
 	bool bIsBlockedJump;
 
 	TArray<AKeyActor*> KeyActorArray;
-
 	TArray<AActor*> InvActorArray;
-
 	UUNoteWidget* CloseWidget;
 
 
@@ -127,11 +125,13 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UHealthComponent* HealthComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UStaminaComponent* StaminaComponent;
 
 
 	UFUNCTION()
 	void OnDeath();
-
 
 public:	
 
@@ -151,19 +151,15 @@ public:
 	void StopRun();
 
 	void FootstepPlaySound();
-
 	void CheckPhysicMaterial();
 
 private:
 
 	void StartCrouch(const FInputActionValue& Value);
 	void StopCrouch(const FInputActionValue& Value);
-
 	void Jump(const FInputActionValue& Value);
 	void StopJump(const FInputActionValue& Value);
-
 	void Look(const FInputActionValue& Value);
-
 	void ActivateAbility(const FInputActionValue& Value);
 
 	UFUNCTION()
@@ -174,9 +170,13 @@ private:
 
 	void Cancel();
 
+	void Running();
+
 
 public:
 
 	void DelaySoundPlay();
 	FTimerHandle DelaySoundPlayHandle;
+
+	FTimerHandle RunningHandle;
 };
