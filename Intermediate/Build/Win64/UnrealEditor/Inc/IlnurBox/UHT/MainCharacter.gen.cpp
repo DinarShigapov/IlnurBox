@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/MainCharacter.h"
+#include "IlnurBox/Public/Player/MainCharacter.h"
 #include "EnhancedInput/Public/InputActionValue.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
@@ -36,7 +36,7 @@ struct Z_Construct_UFunction_AMainCharacter_InteractWithActor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Interacts" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -70,7 +70,7 @@ struct Z_Construct_UFunction_AMainCharacter_Move_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "MovementBP" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[] = {
 		{ "NativeConst", "" },
@@ -111,7 +111,7 @@ struct Z_Construct_UFunction_AMainCharacter_OnDeath_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -141,7 +141,7 @@ struct Z_Construct_UFunction_AMainCharacter_Run_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "MovementBP" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -175,7 +175,7 @@ struct Z_Construct_UFunction_AMainCharacter_SpawnObject_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Loc;
@@ -218,7 +218,7 @@ struct Z_Construct_UFunction_AMainCharacter_StopRun_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "MovementBP" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -266,144 +266,144 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "MainCharacter.h" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "IncludePath", "Player/MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpringArm_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultMappingContext_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_JumpAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RunAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CrouchAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ActivateAbilityAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InteractAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CancelAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ActorToSpawn_MetaData[] = {
 		{ "Category", "Spawning" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RunSpeed_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WalkSpeed_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_JumpHeightDefault_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_JumpHeightLow_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepInterval_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalWalk_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalRun_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepIntervalCrouch_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsRunning_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsJumping_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepSFX_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepGround_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FootstepGrass_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Characteristic" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HealthComponent_MetaData[] = {
 		{ "Category", "Components" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StaminaComponent_MetaData[] = {
 		{ "Category", "Components" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ModuleRelativePath", "Public/Player/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArm;
@@ -438,12 +438,12 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMainCharacter_InteractWithActor, "InteractWithActor" }, // 2756555697
-		{ &Z_Construct_UFunction_AMainCharacter_Move, "Move" }, // 2313451068
-		{ &Z_Construct_UFunction_AMainCharacter_OnDeath, "OnDeath" }, // 1513384204
-		{ &Z_Construct_UFunction_AMainCharacter_Run, "Run" }, // 844491250
-		{ &Z_Construct_UFunction_AMainCharacter_SpawnObject, "SpawnObject" }, // 1316035968
-		{ &Z_Construct_UFunction_AMainCharacter_StopRun, "StopRun" }, // 2312217206
+		{ &Z_Construct_UFunction_AMainCharacter_InteractWithActor, "InteractWithActor" }, // 2838438865
+		{ &Z_Construct_UFunction_AMainCharacter_Move, "Move" }, // 2174109774
+		{ &Z_Construct_UFunction_AMainCharacter_OnDeath, "OnDeath" }, // 766876086
+		{ &Z_Construct_UFunction_AMainCharacter_Run, "Run" }, // 3040165093
+		{ &Z_Construct_UFunction_AMainCharacter_SpawnObject, "SpawnObject" }, // 3463439919
+		{ &Z_Construct_UFunction_AMainCharacter_StopRun, "StopRun" }, // 931984963
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -523,7 +523,7 @@ UObject* (*const Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons[
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMainCharacter_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AMainCharacter, IInteractInterface), false },  // 4080532227
+	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AMainCharacter, IInteractInterface), false },  // 2867701864
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AMainCharacter_Statics::ClassParams = {
 	&AMainCharacter::StaticClass,
@@ -557,14 +557,14 @@ AMainCharacter::~AMainCharacter() {}
 // End Class AMainCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Player_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 284483142U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 240972590U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_4188382909(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_MainCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Player_MainCharacter_h_3310245707(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Player_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Player_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "HealthComponent.h"
+// IWYU pragma: private, include "Components/HealthComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -17,11 +17,11 @@ class UDamageType;
 #endif
 #define ILNURBOX_HealthComponent_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_9_DELEGATE \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_9_DELEGATE \
 ILNURBOX_API void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath);
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execIsDead); \
 	DECLARE_FUNCTION(execTakeDamage); \
 	DECLARE_FUNCTION(execSetCurrentHealth); \
@@ -29,7 +29,7 @@ ILNURBOX_API void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDea
 	DECLARE_FUNCTION(execGetCurrentHealth);
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHealthComponent(); \
 	friend struct Z_Construct_UClass_UHealthComponent_Statics; \
@@ -38,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(UHealthComponent)
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UHealthComponent(UHealthComponent&&); \
@@ -50,13 +50,13 @@ public: \
 	NO_API virtual ~UHealthComponent();
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_12_PROLOG
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_GENERATED_BODY \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_12_PROLOG
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -64,7 +64,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> ILNURBOX_API UClass* StaticClass<class UHealthComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h
+#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/StaminaComponent.h"
+#include "IlnurBox/Public/Components/StaminaComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeStaminaComponent() {}
 
@@ -26,7 +26,7 @@ struct Z_Construct_UFunction_UStaminaComponent_GetCurrentStamina_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -68,7 +68,7 @@ struct Z_Construct_UFunction_UStaminaComponent_GetMaxStamina_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -121,28 +121,28 @@ struct Z_Construct_UClass_UStaminaComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "StaminaComponent.h" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "IncludePath", "Components/StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxStamina_MetaData[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentStamina_MetaData[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StaminaRecoverRate_MetaData[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AmountInIteration_MetaData[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InFirstDelayRecover_MetaData[] = {
 		{ "Category", "Stamina" },
-		{ "ModuleRelativePath", "StaminaComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/StaminaComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxStamina;
@@ -153,8 +153,8 @@ struct Z_Construct_UClass_UStaminaComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UStaminaComponent_GetCurrentStamina, "GetCurrentStamina" }, // 3404113341
-		{ &Z_Construct_UFunction_UStaminaComponent_GetMaxStamina, "GetMaxStamina" }, // 1822480803
+		{ &Z_Construct_UFunction_UStaminaComponent_GetCurrentStamina, "GetCurrentStamina" }, // 288231937
+		{ &Z_Construct_UFunction_UStaminaComponent_GetMaxStamina, "GetMaxStamina" }, // 3446467171
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -212,14 +212,14 @@ UStaminaComponent::~UStaminaComponent() {}
 // End Class UStaminaComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UStaminaComponent, UStaminaComponent::StaticClass, TEXT("UStaminaComponent"), &Z_Registration_Info_UClass_UStaminaComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaminaComponent), 3180517881U) },
+		{ Z_Construct_UClass_UStaminaComponent, UStaminaComponent::StaticClass, TEXT("UStaminaComponent"), &Z_Registration_Info_UClass_UStaminaComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaminaComponent), 4231307963U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_2334658711(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_1785875325(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

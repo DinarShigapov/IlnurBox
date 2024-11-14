@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/HealthComponent.h"
+#include "IlnurBox/Public/Components/HealthComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHealthComponent() {}
 
@@ -25,7 +25,7 @@ struct Z_Construct_UDelegateFunction_IlnurBox_OnDeath__DelegateSignature_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -56,7 +56,7 @@ struct Z_Construct_UFunction_UHealthComponent_GetCurrentHealth_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -98,7 +98,7 @@ struct Z_Construct_UFunction_UHealthComponent_GetMaxHealth_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -140,7 +140,7 @@ struct Z_Construct_UFunction_UHealthComponent_IsDead_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -187,7 +187,7 @@ struct Z_Construct_UFunction_UHealthComponent_SetCurrentHealth_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AmountHealth;
@@ -234,7 +234,7 @@ struct Z_Construct_UFunction_UHealthComponent_TakeDamage_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DamageType_MetaData[] = {
 		{ "NativeConst", "" },
@@ -310,26 +310,26 @@ struct Z_Construct_UClass_UHealthComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "HealthComponent.h" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "IncludePath", "Components/HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[] = {
 		{ "Category", "Health" },
 		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentHealth_MetaData[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RegenRate_MetaData[] = {
 		{ "Category", "Health" },
 		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RegenInterval_MetaData[] = {
 		{ "Category", "Health" },
-		{ "ModuleRelativePath", "HealthComponent.h" },
+		{ "ModuleRelativePath", "Public/Components/HealthComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
@@ -339,11 +339,11 @@ struct Z_Construct_UClass_UHealthComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHealthComponent_GetCurrentHealth, "GetCurrentHealth" }, // 1721862115
-		{ &Z_Construct_UFunction_UHealthComponent_GetMaxHealth, "GetMaxHealth" }, // 650840299
-		{ &Z_Construct_UFunction_UHealthComponent_IsDead, "IsDead" }, // 136454347
-		{ &Z_Construct_UFunction_UHealthComponent_SetCurrentHealth, "SetCurrentHealth" }, // 684412430
-		{ &Z_Construct_UFunction_UHealthComponent_TakeDamage, "TakeDamage" }, // 2910037656
+		{ &Z_Construct_UFunction_UHealthComponent_GetCurrentHealth, "GetCurrentHealth" }, // 3660875261
+		{ &Z_Construct_UFunction_UHealthComponent_GetMaxHealth, "GetMaxHealth" }, // 2385383390
+		{ &Z_Construct_UFunction_UHealthComponent_IsDead, "IsDead" }, // 2364751247
+		{ &Z_Construct_UFunction_UHealthComponent_SetCurrentHealth, "SetCurrentHealth" }, // 1196266702
+		{ &Z_Construct_UFunction_UHealthComponent_TakeDamage, "TakeDamage" }, // 1847889832
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -399,14 +399,14 @@ UHealthComponent::~UHealthComponent() {}
 // End Class UHealthComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UHealthComponent, UHealthComponent::StaticClass, TEXT("UHealthComponent"), &Z_Registration_Info_UClass_UHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHealthComponent), 776456429U) },
+		{ Z_Construct_UClass_UHealthComponent, UHealthComponent::StaticClass, TEXT("UHealthComponent"), &Z_Registration_Info_UClass_UHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHealthComponent), 4191956555U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_3514628126(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_HealthComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_3268015923(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_HealthComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
