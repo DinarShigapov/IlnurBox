@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "StaminaComponent.h"
+// IWYU pragma: private, include "Components/StaminaComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ILNURBOX_StaminaComponent_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetMaxStamina); \
 	DECLARE_FUNCTION(execGetCurrentStamina);
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUStaminaComponent(); \
 	friend struct Z_Construct_UClass_UStaminaComponent_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(UStaminaComponent)
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UStaminaComponent(UStaminaComponent&&); \
@@ -40,13 +40,13 @@ public: \
 	NO_API virtual ~UStaminaComponent();
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_10_PROLOG
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_GENERATED_BODY \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_10_PROLOG
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -54,7 +54,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> ILNURBOX_API UClass* StaticClass<class UStaminaComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_StaminaComponent_h
+#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Components_StaminaComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/LightBulb.h"
+#include "IlnurBox/Public/LightBulb.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeLightBulb() {}
 
@@ -31,12 +31,12 @@ struct Z_Construct_UClass_ALightBulb_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "LightBulb.h" },
-		{ "ModuleRelativePath", "LightBulb.h" },
+		{ "ModuleRelativePath", "Public/LightBulb.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PointLight_MetaData[] = {
 		{ "Category", "Light" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "LightBulb.h" },
+		{ "ModuleRelativePath", "Public/LightBulb.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PointLight;
@@ -89,14 +89,14 @@ ALightBulb::~ALightBulb() {}
 // End Class ALightBulb
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightBulb_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightBulb_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ALightBulb, ALightBulb::StaticClass, TEXT("ALightBulb"), &Z_Registration_Info_UClass_ALightBulb, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALightBulb), 3492634903U) },
+		{ Z_Construct_UClass_ALightBulb, ALightBulb::StaticClass, TEXT("ALightBulb"), &Z_Registration_Info_UClass_ALightBulb, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALightBulb), 3370442528U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightBulb_h_3597348784(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightBulb_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightBulb_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightBulb_h_3320284579(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightBulb_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightBulb_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

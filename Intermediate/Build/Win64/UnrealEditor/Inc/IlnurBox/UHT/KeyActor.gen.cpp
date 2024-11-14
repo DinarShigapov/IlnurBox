@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/KeyActor.h"
+#include "IlnurBox/Public/KeyActor.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeKeyActor() {}
 
@@ -31,12 +31,12 @@ struct Z_Construct_UClass_AKeyActor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "KeyActor.h" },
-		{ "ModuleRelativePath", "KeyActor.h" },
+		{ "ModuleRelativePath", "Public/KeyActor.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdKey_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "ID" },
-		{ "ModuleRelativePath", "KeyActor.h" },
+		{ "ModuleRelativePath", "Public/KeyActor.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_IdKey;
@@ -59,7 +59,7 @@ UObject* (*const Z_Construct_UClass_AKeyActor_Statics::DependentSingletons[])() 
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AKeyActor_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AKeyActor_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AKeyActor, IInteractInterface), false },  // 4080532227
+	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AKeyActor, IInteractInterface), false },  // 2867701864
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AKeyActor_Statics::ClassParams = {
 	&AKeyActor::StaticClass,
@@ -93,14 +93,14 @@ AKeyActor::~AKeyActor() {}
 // End Class AKeyActor
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_KeyActor_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_KeyActor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKeyActor, AKeyActor::StaticClass, TEXT("AKeyActor"), &Z_Registration_Info_UClass_AKeyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKeyActor), 2974815845U) },
+		{ Z_Construct_UClass_AKeyActor, AKeyActor::StaticClass, TEXT("AKeyActor"), &Z_Registration_Info_UClass_AKeyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKeyActor), 2583443136U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_KeyActor_h_2981194457(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_KeyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_KeyActor_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_KeyActor_h_3313928727(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_KeyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_KeyActor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

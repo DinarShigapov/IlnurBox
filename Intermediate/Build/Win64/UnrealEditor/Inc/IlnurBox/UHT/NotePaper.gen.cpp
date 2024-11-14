@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/NotePaper.h"
+#include "IlnurBox/Public/NotePaper.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeNotePaper() {}
 
@@ -33,11 +33,11 @@ struct Z_Construct_UClass_ANotePaper_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "NotePaper.h" },
-		{ "ModuleRelativePath", "NotePaper.h" },
+		{ "ModuleRelativePath", "Public/NotePaper.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NoteWidgetClass_MetaData[] = {
 		{ "Category", "UI" },
-		{ "ModuleRelativePath", "NotePaper.h" },
+		{ "ModuleRelativePath", "Public/NotePaper.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_NoteWidgetClass;
@@ -60,7 +60,7 @@ UObject* (*const Z_Construct_UClass_ANotePaper_Statics::DependentSingletons[])()
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANotePaper_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ANotePaper_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(ANotePaper, IInteractInterface), false },  // 4080532227
+	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(ANotePaper, IInteractInterface), false },  // 2867701864
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_ANotePaper_Statics::ClassParams = {
 	&ANotePaper::StaticClass,
@@ -94,14 +94,14 @@ ANotePaper::~ANotePaper() {}
 // End Class ANotePaper
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_NotePaper_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_NotePaper_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ANotePaper, ANotePaper::StaticClass, TEXT("ANotePaper"), &Z_Registration_Info_UClass_ANotePaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANotePaper), 3491842724U) },
+		{ Z_Construct_UClass_ANotePaper, ANotePaper::StaticClass, TEXT("ANotePaper"), &Z_Registration_Info_UClass_ANotePaper, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANotePaper), 2984690523U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_NotePaper_h_2828655010(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_NotePaper_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_NotePaper_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_NotePaper_h_2402025777(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_NotePaper_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_NotePaper_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

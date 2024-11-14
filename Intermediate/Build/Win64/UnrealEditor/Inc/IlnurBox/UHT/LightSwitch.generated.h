@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ILNURBOX_LightSwitch_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesALightSwitch(); \
 	friend struct Z_Construct_UClass_ALightSwitch_Statics; \
@@ -24,7 +24,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ALightSwitch*>(this); }
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ALightSwitch(ALightSwitch&&); \
@@ -36,12 +36,12 @@ public: \
 	NO_API virtual ~ALightSwitch();
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_13_PROLOG
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_16_GENERATED_BODY \
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_13_PROLOG
+#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -49,7 +49,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> ILNURBOX_API UClass* StaticClass<class ALightSwitch>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_LightSwitch_h
+#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_LightSwitch_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

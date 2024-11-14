@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/FirstKit.h"
+#include "IlnurBox/Public/FirstKit.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFirstKit() {}
 
@@ -31,7 +31,7 @@ struct Z_Construct_UClass_AFirstKit_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "FirstKit.h" },
-		{ "ModuleRelativePath", "FirstKit.h" },
+		{ "ModuleRelativePath", "Public/FirstKit.h" },
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -47,7 +47,7 @@ UObject* (*const Z_Construct_UClass_AFirstKit_Statics::DependentSingletons[])() 
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AFirstKit_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AFirstKit_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AFirstKit, IInteractInterface), false },  // 4080532227
+	{ Z_Construct_UClass_UInteractInterface_NoRegister, (int32)VTABLE_OFFSET(AFirstKit, IInteractInterface), false },  // 2867701864
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AFirstKit_Statics::ClassParams = {
 	&AFirstKit::StaticClass,
@@ -81,14 +81,14 @@ AFirstKit::~AFirstKit() {}
 // End Class AFirstKit
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_FirstKit_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_FirstKit_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AFirstKit, AFirstKit::StaticClass, TEXT("AFirstKit"), &Z_Registration_Info_UClass_AFirstKit, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstKit), 114986452U) },
+		{ Z_Construct_UClass_AFirstKit, AFirstKit::StaticClass, TEXT("AFirstKit"), &Z_Registration_Info_UClass_AFirstKit, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstKit), 653706551U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_FirstKit_h_1368372846(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_FirstKit_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_FirstKit_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_FirstKit_h_3330992305(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_FirstKit_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_FirstKit_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
