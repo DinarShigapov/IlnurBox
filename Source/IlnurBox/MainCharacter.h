@@ -71,6 +71,12 @@ class ILNURBOX_API AMainCharacter : public ACharacter, public IInteractInterface
 	float WalkSpeed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float JumpHeightDefault;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
+	float JumpHeightLow;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
 	float FootstepInterval;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Characteristic, meta = (AllowPrivateAccess = "true"))
@@ -169,7 +175,6 @@ private:
 	void InteractWithActor();
 
 	void Cancel();
-
 	void Running();
 
 
@@ -179,4 +184,5 @@ public:
 	FTimerHandle DelaySoundPlayHandle;
 
 	FTimerHandle RunningHandle;
+
 };

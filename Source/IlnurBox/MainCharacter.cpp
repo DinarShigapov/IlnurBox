@@ -27,6 +27,8 @@ AMainCharacter::AMainCharacter()
 
 	RunSpeed = 500;
 	WalkSpeed = 300;
+	JumpHeightDefault = 420;
+	JumpHeightLow = 210;
 	FootstepIntervalWalk = 0.5;
 	FootstepIntervalRun = 0.3;
 	FootstepIntervalCrouch = 0.7;
@@ -59,6 +61,7 @@ void AMainCharacter::BeginPlay()
 	{
 		HealthComponent->OnDeath.AddDynamic(this, &AMainCharacter::OnDeath);
 	}
+
 
 }
 
@@ -291,14 +294,19 @@ void AMainCharacter::Jump(const FInputActionValue& Value)
 
 	if (!GetMovementComponent()->IsFalling())
 	{
+		if (StaminaComponent->CanPerformAction(1.0))
+		{
+			StaminaComponent->ConsumeStamina(1.0);
+			GetCharacterMovement()->JumpZVelocity = JumpHeightDefault;
+		}
+		else
+		{
+			GetCharacterMovement()->JumpZVelocity = JumpHeightLow;
+		}
+
 		bIsJumping = true;
 		bPressedJump = true;
 		JumpKeyHoldTime = 0.0f;
-
-		if (StaminaComponent->CanPerformAction(1.0))
-		{
-			StaminaComponent->ConsumeStamina(1.0);;
-		}
 	}
 
 }
