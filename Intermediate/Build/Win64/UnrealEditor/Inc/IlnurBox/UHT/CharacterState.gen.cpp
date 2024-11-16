@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/CharacterState.h"
+#include "IlnurBox/Public/CharacterState.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterState() {}
 
@@ -37,7 +37,7 @@ struct Z_Construct_UEnum_IlnurBox_EChatacterState_Statics
 		{ "Comment", "/**\n * \n */" },
 #endif
 		{ "IsBlueprintBase", "true" },
-		{ "ModuleRelativePath", "CharacterState.h" },
+		{ "ModuleRelativePath", "Public/CharacterState.h" },
 		{ "STAT_Crouch.Comment", "/**\n * \n */" },
 		{ "STAT_Crouch.DisplayName", "Crouch" },
 		{ "STAT_Crouch.Name", "STAT_Crouch" },
@@ -91,15 +91,15 @@ UEnum* Z_Construct_UEnum_IlnurBox_EChatacterState()
 // End Enum EChatacterState
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_CharacterState_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EChatacterState_StaticEnum, TEXT("EChatacterState"), &Z_Registration_Info_UEnum_EChatacterState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 557789258U) },
+		{ EChatacterState_StaticEnum, TEXT("EChatacterState"), &Z_Registration_Info_UEnum_EChatacterState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2294776546U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_759846602(TEXT("/Script/IlnurBox"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_CharacterState_h_1690145260(TEXT("/Script/IlnurBox"),
 	nullptr, 0,
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_CharacterState_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_CharacterState_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_CharacterState_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

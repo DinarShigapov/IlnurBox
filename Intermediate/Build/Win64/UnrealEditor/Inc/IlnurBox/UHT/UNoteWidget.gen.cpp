@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "IlnurBox/UNoteWidget.h"
+#include "IlnurBox/Public/UNoteWidget.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeUNoteWidget() {}
 
@@ -33,7 +33,7 @@ struct Z_Construct_UClass_UUNoteWidget_Statics
 		{ "Comment", "/**\n * \n */" },
 #endif
 		{ "IncludePath", "UNoteWidget.h" },
-		{ "ModuleRelativePath", "UNoteWidget.h" },
+		{ "ModuleRelativePath", "Public/UNoteWidget.h" },
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -80,14 +80,14 @@ UUNoteWidget::~UUNoteWidget() {}
 // End Class UUNoteWidget
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_UNoteWidget_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UUNoteWidget, UUNoteWidget::StaticClass, TEXT("UUNoteWidget"), &Z_Registration_Info_UClass_UUNoteWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUNoteWidget), 2255972070U) },
+		{ Z_Construct_UClass_UUNoteWidget, UUNoteWidget::StaticClass, TEXT("UUNoteWidget"), &Z_Registration_Info_UClass_UUNoteWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUNoteWidget), 2551143853U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_UNoteWidget_h_1333413441(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_UNoteWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_UNoteWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_883741581(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

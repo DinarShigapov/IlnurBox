@@ -33,60 +33,6 @@
     <Filter Include="Source\IlnurBox">
       <UniqueIdentifier>{42BAB888-A8A9-3B2D-B048-27590C9946E7}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\IlnurBox\BananaActor.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\BananaActor.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\BlockedActorTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\BlockedActorTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\CharacterState.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\CharacterState.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\DeathTimerTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\DeathTimerTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\DeathZoneTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\DeathZoneTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\Door.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\Door.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\FirstKit.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\FirstKit.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\HalfHealthTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\HalfHealthTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\Hammer.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\Hammer.h">
-      <Filter>Source\IlnurBox</Filter>
-    </ClInclude>
     <None Include="..\..\Source\IlnurBox\IlnurBox.Build.cs">
       <Filter>Source\IlnurBox</Filter>
     </None>
@@ -96,89 +42,155 @@
     <ClInclude Include="..\..\Source\IlnurBox\IlnurBox.h">
       <Filter>Source\IlnurBox</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\InteractableBase.cpp">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Private">
+      <UniqueIdentifier>{B5BF8F23-01DE-3168-AF00-0E3B467F9D7B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\CharacterState.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\InteractableBase.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\InteractableBase.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\MainHUD.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\MyGameModeBase.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UNoteWidget.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\Components">
+      <UniqueIdentifier>{A0949021-E497-3C9B-B5DD-427F45A300F0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Components\HealthComponent.cpp">
+      <Filter>Source\IlnurBox\Private\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Components\StaminaComponent.cpp">
+      <Filter>Source\IlnurBox\Private\Components</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\Interfaces">
+      <UniqueIdentifier>{819141FA-1A7F-32CB-AB79-5EFAAD48066C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Interfaces\InteractInterface.cpp">
+      <Filter>Source\IlnurBox\Private\Interfaces</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\Items">
+      <UniqueIdentifier>{49609DCA-CE38-3A6E-9F8A-F7404925F77F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Items\ItemBase.cpp">
+      <Filter>Source\IlnurBox\Private\Items</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\Player">
+      <UniqueIdentifier>{0A7943F4-4277-3A80-94B7-089CF6B55EF3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Player\MainCharacter.cpp">
+      <Filter>Source\IlnurBox\Private\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface">
+      <UniqueIdentifier>{6C585F4C-1E1B-3A98-B273-23ED7D49F3D7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\MainMenu.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface\Interaction">
+      <UniqueIdentifier>{C793ECB1-9DDF-3774-BE73-2F973903FC5C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\Interaction\InteractionWidget.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface\Interaction</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface\Inventory">
+      <UniqueIdentifier>{70B3651C-5656-3AE5-80B1-5E1F7F4469DA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\Inventory\InventoryPanel.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface\Inventory</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\World">
+      <UniqueIdentifier>{E54EBDEA-ABE1-304E-92E6-5CEE7F6E48FC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\World\InterfaceTestActor.cpp">
+      <Filter>Source\IlnurBox\Private\World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\World\Pickup.cpp">
+      <Filter>Source\IlnurBox\Private\World</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Public">
+      <UniqueIdentifier>{68F52F86-CDD4-3407-A737-E1C84BB3457D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\CharacterState.h">
+      <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\InteractInterface.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\InteractInterface.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\InteractableBase.h">
+      <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\KeyActor.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\KeyActor.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\MainHUD.h">
+      <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\LightBulb.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\LightBulb.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\MyGameModeBase.h">
+      <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\LightSwitch.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\LightSwitch.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UNoteWidget.h">
+      <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\Lock.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\Lock.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\Components">
+      <UniqueIdentifier>{E25C905F-41D7-3684-9F59-9F706EF11A22}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Components\HealthComponent.h">
+      <Filter>Source\IlnurBox\Public\Components</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\MainCharacter.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\MainCharacter.h">
-      <Filter>Source\IlnurBox</Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Components\StaminaComponent.h">
+      <Filter>Source\IlnurBox\Public\Components</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\MyGameModeBase.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\MyGameModeBase.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\Data">
+      <UniqueIdentifier>{B6C77CF6-5D75-393A-9824-D5AE85E6FB06}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Data\ItemDataStructs.h">
+      <Filter>Source\IlnurBox\Public\Data</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\MyUserWidget.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\MyUserWidget.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\Interfaces">
+      <UniqueIdentifier>{F091AEFF-9975-343A-BB3E-5AFA295816C0}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Interfaces\InteractInterface.h">
+      <Filter>Source\IlnurBox\Public\Interfaces</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\NotePaper.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\NotePaper.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\Items">
+      <UniqueIdentifier>{7DF57C75-9474-3B9D-B375-B21BD2694D0D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Items\ItemBase.h">
+      <Filter>Source\IlnurBox\Public\Items</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\Potion.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\Potion.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\Player">
+      <UniqueIdentifier>{8E5198BC-4AA1-3BC9-A29C-756BB7985B20}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Player\MainCharacter.h">
+      <Filter>Source\IlnurBox\Public\Player</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\SoundZonaTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\SoundZonaTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\UserInterface">
+      <UniqueIdentifier>{D3C0A840-06DC-32AB-BAA6-C885424BB58A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\MainMenu.h">
+      <Filter>Source\IlnurBox\Public\UserInterface</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\SpawnCubeTrigger.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\SpawnCubeTrigger.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\UserInterface\Interaction">
+      <UniqueIdentifier>{C85973EF-B43A-3DC3-8DEF-5445BBEB38E8}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\Interaction\InteractionWidget.h">
+      <Filter>Source\IlnurBox\Public\UserInterface\Interaction</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\IlnurBox\UNoteWidget.cpp">
-      <Filter>Source\IlnurBox</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\IlnurBox\UNoteWidget.h">
-      <Filter>Source\IlnurBox</Filter>
+    <Filter Include="Source\IlnurBox\Public\UserInterface\Inventory">
+      <UniqueIdentifier>{BE8BCB89-5F00-3C39-B61F-B9693D3587A4}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\Inventory\InventoryPanel.h">
+      <Filter>Source\IlnurBox\Public\UserInterface\Inventory</Filter>
+    </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\World">
+      <UniqueIdentifier>{D1F9D5B1-ECEC-3E5A-9C60-B09A16BACA46}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\World\InterfaceTestActor.h">
+      <Filter>Source\IlnurBox\Public\World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\World\Pickup.h">
+      <Filter>Source\IlnurBox\Public\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
