@@ -6,29 +6,65 @@
 #include "UObject/Interface.h"
 #include "InteractInterface.generated.h"
 
-// This class does not need to be modified.
+class AMainCharacter;
+
+UENUM()
+enum class EInteractableType : uint8
+{
+	Pickup UMETA(DisplayName = "Pickup"),
+	Device UMETA(DisplayName = "Device"),
+	Container UMETA(DisplayName = "Container")
+};
+
+
+USTRUCT()
+struct FInteractableData
+{
+	GENERATED_USTRUCT_BODY();
+
+	FInteractableData() : 
+	InteractableType(EInteractableType::Pickup),
+	Name(FText::GetEmpty()),
+	Action(FText::GetEmpty()),
+	Quantity(0),
+	InteractionDuration(0.0f){};
+
+	UPROPERTY(EditInstanceOnly)
+	EInteractableType InteractableType;
+
+	UPROPERTY(EditInstanceOnly)
+	FText Name;
+
+	UPROPERTY(EditInstanceOnly)
+	FText Action;
+
+	UPROPERTY(EditInstanceOnly)
+	int8 Quantity;
+
+	UPROPERTY(EditInstanceOnly)
+	float InteractionDuration;
+};
+
 UINTERFACE(MinimalAPI)
 class UInteractInterface : public UInterface
 {
 	GENERATED_BODY()
 };
 
-/**
- * 
- */
+
 class ILNURBOX_API IInteractInterface
 {
 	GENERATED_BODY()
-
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
 	bool Lootable = false;
 
-	virtual void OnInteract(AActor* Caller) {}
+	virtual void Interact(AMainCharacter* Caller);
+	virtual void StartFocus();
+	virtual void EndFocus();
+	virtual void StartInteract();
+	virtual void EndInteract();
 
-	virtual void StartFocus() {}
-
-	virtual void EndFocus() {}
+	FInteractableData InteractableData;
 
 };

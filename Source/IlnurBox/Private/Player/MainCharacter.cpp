@@ -34,6 +34,11 @@ AMainCharacter::AMainCharacter()
 	FootstepIntervalCrouch = 0.7;
 	FootstepInterval = FootstepIntervalWalk;
 
+	InteractionCheckFrequency = 0.1;
+	InteractionCheckDistance = 200.0f;
+
+	BaseEyeHeight = 50.0f;
+
 	bIsRunning = false;
 	bIsJumping = false;
 
@@ -66,12 +71,143 @@ void AMainCharacter::BeginPlay()
 
 }
 
+void AMainCharacter::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	if (GetWorld()->TimeSince(InteractionData.LastInteractionCheckTime) > InteractionCheckFrequency) 
+	{
+		PerformInteractionCheck();
+	}
+}
+
 void AMainCharacter::OnDeath()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Unlucky you died"));
 	this->SetActorLocation(FVector(0,0,0));
 	HealthComponent->SetCurrentHealth(100);
 }
+
+void AMainCharacter::PerformInteractionCheck()
+{
+	InteractionData.LastInteractionCheckTime = GetWorld()->GetTimeSeconds();
+
+	FVector TraceStart{ GetPawnViewLocation() };
+	FVector TraceEnd{ TraceStart + (GetViewRotation().Vector() * InteractionCheckDistance) };
+
+	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, FColor::Red, false, 1.0f, 0, 2.0f);
+
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+	FHitResult TraceHit;
+
+	if (GetWorld()->LineTraceSingleByChannel(TraceHit, TraceStart, TraceEnd,ECC_Visibility, QueryParams))
+	{
+
+		if (TraceHit.GetActor()->GetClass()->ImplementsInterface(UInteractInterface::StaticClass()))
+		{
+			const float Distance = (TraceStart - TraceHit.ImpactPoint).Size();
+
+			if (TraceHit.GetActor() != InteractionData.CurrentInteractable && Distance <= InteractionCheckDistance)
+			{
+				FoundInteractable(TraceHit.GetActor());
+			}
+
+			if (TraceHit.GetActor() == InteractionData.CurrentInteractable)
+			{
+				return;
+			}
+		}
+	}
+
+	NoInteractableFound();
+}
+
+void AMainCharacter::FoundInteractable(AActor* NewInteractable)
+{
+	if (IsInteracting())
+	{
+		EndInteract();
+	}
+
+	if (InteractionData.CurrentInteractable)
+	{
+		TargetInteractable = InteractionData.CurrentInteractable;
+		TargetInteractable->EndFocus();
+	}
+
+	InteractionData.CurrentInteractable = NewInteractable;
+	TargetInteractable = NewInteractable;
+
+	TargetInteractable->StartFocus();
+}
+
+void AMainCharacter::NoInteractableFound()
+{
+	if (IsInteracting())
+	{
+		GetWorldTimerManager().ClearTimer(TimerHandle_Interaction);
+	}
+
+	if (InteractionData.CurrentInteractable)
+	{
+		if (IsValid(TargetInteractable.GetObject()))
+		{
+			TargetInteractable->EndFocus();
+		}
+
+		InteractionData.CurrentInteractable = nullptr;
+		TargetInteractable = nullptr;
+	}
+}
+
+void AMainCharacter::BeginInteract()
+{
+	PerformInteractionCheck();
+
+	if (InteractionData.CurrentInteractable)
+	{
+		if (IsValid(TargetInteractable.GetObject()))
+		{
+			TargetInteractable->StartInteract();
+
+			if (FMath::IsNearlyZero(TargetInteractable->InteractableData.InteractionDuration, 0.1f))
+			{
+				Interact();
+			}
+			else
+			{
+				GetWorldTimerManager().SetTimer(TimerHandle_Interaction,
+					this,
+					&AMainCharacter::Interact,
+					TargetInteractable->InteractableData.InteractionDuration,
+					false);
+			}
+		}
+	}
+}
+
+void AMainCharacter::EndInteract()
+{
+	GetWorldTimerManager().ClearTimer(TimerHandle_Interaction);
+
+	if (IsValid(TargetInteractable.GetObject()))
+	{
+		TargetInteractable->EndInteract();
+	}
+}
+
+void AMainCharacter::Interact()
+{
+	GetWorldTimerManager().ClearTimer(TimerHandle_Interaction);
+
+	if (IsValid(TargetInteractable.GetObject()))
+	{
+		TargetInteractable->Interact(this);
+	}
+}
+
+
 
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -97,7 +233,8 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &AMainCharacter::StartCrouch);
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Completed, this, &AMainCharacter::StopCrouch);
 		EnhancedInputComponent->BindAction(ActivateAbilityAction, ETriggerEvent::Triggered, this, &AMainCharacter::ActivateAbility);
-		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AMainCharacter::InteractWithActor);
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &AMainCharacter::BeginInteract);
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Completed, this, &AMainCharacter::EndInteract);
 		EnhancedInputComponent->BindAction(CancelAction, ETriggerEvent::Triggered, this, &AMainCharacter::Cancel);
 	}
 }
@@ -375,19 +512,9 @@ void AMainCharacter::InteractWithActor()
 
 	if (bHit)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("HIT AN ACTOR"));
-		if (IInteractInterface* InteractInterface = Cast<IInteractInterface>(HitResult.GetActor()))
-		{
-			InteractInterface->OnInteract(this);
 
-			if (InteractInterface->Lootable)
-			{
-				HitResult.GetActor()->Destroy();
-			}
-		}
 	}
 
-	DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 3.0f, 0, 2.0f);
 }
 
 void AMainCharacter::Cancel()

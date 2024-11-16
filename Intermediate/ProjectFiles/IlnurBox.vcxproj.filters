@@ -48,34 +48,10 @@
     <ClCompile Include="..\..\Source\IlnurBox\Private\CharacterState.cpp">
       <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\Door.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\FirstKit.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\IlnurBox\Private\InteractableBase.cpp">
       <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\KeyActor.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\LightBulb.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\LightSwitch.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\Lock.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\IlnurBox\Private\MyGameModeBase.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\NotePaper.cpp">
-      <Filter>Source\IlnurBox\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\IlnurBox\Private\Potion.cpp">
       <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\IlnurBox\Private\UNoteWidget.cpp">
@@ -96,11 +72,23 @@
     <ClCompile Include="..\..\Source\IlnurBox\Private\Interfaces\InteractInterface.cpp">
       <Filter>Source\IlnurBox\Private\Interfaces</Filter>
     </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\Items">
+      <UniqueIdentifier>{49609DCA-CE38-3A6E-9F8A-F7404925F77F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\Items\ItemBase.cpp">
+      <Filter>Source\IlnurBox\Private\Items</Filter>
+    </ClCompile>
     <Filter Include="Source\IlnurBox\Private\Player">
       <UniqueIdentifier>{0A7943F4-4277-3A80-94B7-089CF6B55EF3}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\IlnurBox\Private\Player\MainCharacter.cpp">
       <Filter>Source\IlnurBox\Private\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\World">
+      <UniqueIdentifier>{E54EBDEA-ABE1-304E-92E6-5CEE7F6E48FC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\World\InterfaceTestActor.cpp">
+      <Filter>Source\IlnurBox\Private\World</Filter>
     </ClCompile>
     <Filter Include="Source\IlnurBox\Public">
       <UniqueIdentifier>{68F52F86-CDD4-3407-A737-E1C84BB3457D}</UniqueIdentifier>
@@ -108,34 +96,10 @@
     <ClInclude Include="..\..\Source\IlnurBox\Public\CharacterState.h">
       <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\Door.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\FirstKit.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\IlnurBox\Public\InteractableBase.h">
       <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\KeyActor.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\LightBulb.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\LightSwitch.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\Lock.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\IlnurBox\Public\MyGameModeBase.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\NotePaper.h">
-      <Filter>Source\IlnurBox\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\IlnurBox\Public\Potion.h">
       <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\IlnurBox\Public\UNoteWidget.h">
@@ -162,11 +126,23 @@
     <ClInclude Include="..\..\Source\IlnurBox\Public\Interfaces\InteractInterface.h">
       <Filter>Source\IlnurBox\Public\Interfaces</Filter>
     </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\Items">
+      <UniqueIdentifier>{7DF57C75-9474-3B9D-B375-B21BD2694D0D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\Items\ItemBase.h">
+      <Filter>Source\IlnurBox\Public\Items</Filter>
+    </ClInclude>
     <Filter Include="Source\IlnurBox\Public\Player">
       <UniqueIdentifier>{8E5198BC-4AA1-3BC9-A29C-756BB7985B20}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\IlnurBox\Public\Player\MainCharacter.h">
       <Filter>Source\IlnurBox\Public\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\World">
+      <UniqueIdentifier>{D1F9D5B1-ECEC-3E5A-9C60-B09A16BACA46}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\World\InterfaceTestActor.h">
+      <Filter>Source\IlnurBox\Public\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

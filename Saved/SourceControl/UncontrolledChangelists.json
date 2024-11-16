@@ -1,0 +1,39 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Unreal Projects/IlnurBoxProject/Content/ItemData/ItemDataTable.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_MyMainCharacter.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Materials/PP_OutlineCustomDepth.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/MyInterfaceTestActor.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/D/HE/LYKDZURSCHYVJLJG3W9OTH.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/0/7E/6YF5HKSVJWNL43AXIKDPTS.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/KeyBindings/Actions/IA_Interact.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_FirstKit.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/7/F7/17IR1KMKU1MW49ZJ3ML0EK.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/9/2L/JDYQO2Q36I6X9PEBZJ46R8.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/7/U2/9SV8E2XWAWPV1HE3EDFB8U.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/1/18/60OY6NMH4XCXEFY05UL132.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/0/7R/KXI0ALIRTJSUZWXERM6CQ6.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/6/43/T8KTT3ZVB6DIWH59ILCCA7.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/D/GE/S5C6W728YQY0F86OUUO3YY.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/B/VN/9AU0ROZ2CY6EZ4XW03EEL5.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/B/61/RLJT8N454AFGQES8BM1GSZ.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/8/0W/WTWKM6TZSGJQOAYH7OG1G0.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/6/Q5/9YKCE0WPHL1P2GKQNETSMD.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/E/9M/CF0ZN09LVCRWMWMY6G310D.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/__ExternalActors__/Maps/NewMap/7/V6/47EMC3RH30GRULEHYXNGYN.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_LightBulb.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_LightSwitch.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_Lock.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_Door.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_KeyActor.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_Potion.uasset",
+				"C:/Unreal Projects/IlnurBoxProject/Content/Blueprint/BP_NotePaper.uasset"
+			]
+		}
+	]
+}
