@@ -4,6 +4,7 @@
 #include "Player/MainCharacter.h"
 #include "Components/HealthComponent.h"
 #include "Components/StaminaComponent.h"
+#include "MainHUD.h"
 #include "UNoteWidget.h"
 
 
@@ -58,6 +59,9 @@ AMainCharacter::AMainCharacter()
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+
+	HUD = Cast<AMainHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
 	
 	check(GEngine != nullptr);
 
@@ -95,7 +99,7 @@ void AMainCharacter::PerformInteractionCheck()
 	FVector TraceStart{ GetPawnViewLocation() };
 	FVector TraceEnd{ TraceStart + (GetViewRotation().Vector() * InteractionCheckDistance) };
 
-	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, FColor::Red, false, 1.0f, 0, 2.0f);
+	//DrawDebugLine(GetWorld(), TraceStart, TraceEnd, FColor::Red, false, 1.0f, 0, 2.0f);
 
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
@@ -139,6 +143,8 @@ void AMainCharacter::FoundInteractable(AActor* NewInteractable)
 	InteractionData.CurrentInteractable = NewInteractable;
 	TargetInteractable = NewInteractable;
 
+	HUD->UpdateInteractionWidget(&TargetInteractable->InteractableData);
+
 	TargetInteractable->StartFocus();
 }
 
@@ -155,6 +161,8 @@ void AMainCharacter::NoInteractableFound()
 		{
 			TargetInteractable->EndFocus();
 		}
+
+		HUD->HideInteractionWidget();
 
 		InteractionData.CurrentInteractable = nullptr;
 		TargetInteractable = nullptr;

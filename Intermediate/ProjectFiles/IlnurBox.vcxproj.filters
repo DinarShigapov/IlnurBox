@@ -51,6 +51,9 @@
     <ClCompile Include="..\..\Source\IlnurBox\Private\InteractableBase.cpp">
       <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\MainHUD.cpp">
+      <Filter>Source\IlnurBox\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\IlnurBox\Private\MyGameModeBase.cpp">
       <Filter>Source\IlnurBox\Private</Filter>
     </ClCompile>
@@ -84,10 +87,31 @@
     <ClCompile Include="..\..\Source\IlnurBox\Private\Player\MainCharacter.cpp">
       <Filter>Source\IlnurBox\Private\Player</Filter>
     </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface">
+      <UniqueIdentifier>{6C585F4C-1E1B-3A98-B273-23ED7D49F3D7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\MainMenu.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface\Interaction">
+      <UniqueIdentifier>{C793ECB1-9DDF-3774-BE73-2F973903FC5C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\Interaction\InteractionWidget.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface\Interaction</Filter>
+    </ClCompile>
+    <Filter Include="Source\IlnurBox\Private\UserInterface\Inventory">
+      <UniqueIdentifier>{70B3651C-5656-3AE5-80B1-5E1F7F4469DA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\UserInterface\Inventory\InventoryPanel.cpp">
+      <Filter>Source\IlnurBox\Private\UserInterface\Inventory</Filter>
+    </ClCompile>
     <Filter Include="Source\IlnurBox\Private\World">
       <UniqueIdentifier>{E54EBDEA-ABE1-304E-92E6-5CEE7F6E48FC}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\IlnurBox\Private\World\InterfaceTestActor.cpp">
+      <Filter>Source\IlnurBox\Private\World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\IlnurBox\Private\World\Pickup.cpp">
       <Filter>Source\IlnurBox\Private\World</Filter>
     </ClCompile>
     <Filter Include="Source\IlnurBox\Public">
@@ -97,6 +121,9 @@
       <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\IlnurBox\Public\InteractableBase.h">
+      <Filter>Source\IlnurBox\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\MainHUD.h">
       <Filter>Source\IlnurBox\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\IlnurBox\Public\MyGameModeBase.h">
@@ -138,10 +165,31 @@
     <ClInclude Include="..\..\Source\IlnurBox\Public\Player\MainCharacter.h">
       <Filter>Source\IlnurBox\Public\Player</Filter>
     </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\UserInterface">
+      <UniqueIdentifier>{D3C0A840-06DC-32AB-BAA6-C885424BB58A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\MainMenu.h">
+      <Filter>Source\IlnurBox\Public\UserInterface</Filter>
+    </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\UserInterface\Interaction">
+      <UniqueIdentifier>{C85973EF-B43A-3DC3-8DEF-5445BBEB38E8}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\Interaction\InteractionWidget.h">
+      <Filter>Source\IlnurBox\Public\UserInterface\Interaction</Filter>
+    </ClInclude>
+    <Filter Include="Source\IlnurBox\Public\UserInterface\Inventory">
+      <UniqueIdentifier>{BE8BCB89-5F00-3C39-B61F-B9693D3587A4}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\UserInterface\Inventory\InventoryPanel.h">
+      <Filter>Source\IlnurBox\Public\UserInterface\Inventory</Filter>
+    </ClInclude>
     <Filter Include="Source\IlnurBox\Public\World">
       <UniqueIdentifier>{D1F9D5B1-ECEC-3E5A-9C60-B09A16BACA46}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\IlnurBox\Public\World\InterfaceTestActor.h">
+      <Filter>Source\IlnurBox\Public\World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\IlnurBox\Public\World\Pickup.h">
       <Filter>Source\IlnurBox\Public\World</Filter>
     </ClInclude>
   </ItemGroup>
