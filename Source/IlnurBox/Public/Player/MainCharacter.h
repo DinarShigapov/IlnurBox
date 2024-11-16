@@ -21,6 +21,7 @@
 #include "EnhancedInputComponent.h"
 #include "Components/HealthComponent.h"
 #include "Components/StaminaComponent.h"
+#include "MainHUD.h"
 #include "MainCharacter.generated.h"
 
 class UUNoteWidget;
@@ -170,6 +171,12 @@ protected:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaSeconds) override;
+
+	UPROPERTY()
+	AMainHUD* HUD;
+
+	UPROPERTY()
+	TObjectPtr<APlayerController> MainPlayerController;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Character | Components")
 	UHealthComponent* HealthComponent;
