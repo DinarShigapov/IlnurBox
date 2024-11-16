@@ -8,19 +8,18 @@
 UENUM()
 enum class EItemQuality : uint8
 {
+	None UMETA(DisplayName = "None"),
 	Shoddy UMETA(DisplayName = "Shoddy"),
 	Common UMETA(DisplayName = "Common"),
 	Quality UMETA(DisplayName = "Quality"),
-	Masterwork UMETA(DisplayName = "Masterwork"),
-	Grandmaster UMETA(DisplayName = "Grandmaster")
+	Masterwork UMETA(DisplayName = "Masterwork")
 };
 
 UENUM()
 enum class EItemType : uint8
 {
-	Armor UMETA(DisplayName = "Armor"),
 	Weapon UMETA(DisplayName = "Weapon"),
-	Shield UMETA(DisplayName = "Shield"),
+	Tool UMETA(DisplayName = "Tool"),
 	Spell UMETA(DisplayName = "Spell"),
 	Consumable UMETA(DisplayName = "Consumable"),
 	Quest UMETA(DisplayName = "Quest"),
@@ -31,9 +30,6 @@ USTRUCT()
 struct FItemStatistics
 {
 	GENERATED_USTRUCT_BODY()
-
-	UPROPERTY(EditAnywhere)
-	float ArmorRating;
 
 	UPROPERTY(EditAnywhere)
 	float DamageValue;
