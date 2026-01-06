@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Unreal Projects\\IlnurBoxProject\\Source\\IlnurBox\\IlnurBox.Build.cs",
-		"C:\\Unreal Projects\\IlnurBoxProject\\Source\\IlnurBox.Target.cs",
-		"C:\\Unreal Projects\\IlnurBoxProject\\Source\\IlnurBoxEditor.Target.cs"
+		"C:\\Users\\dinar\\source\\repos\\DinarShigapov\\IlnurBox 5.5\\Source\\IlnurBox\\IlnurBox.Build.cs",
+		"C:\\Users\\dinar\\source\\repos\\DinarShigapov\\IlnurBox 5.5\\Source\\IlnurBox.Target.cs",
+		"C:\\Users\\dinar\\source\\repos\\DinarShigapov\\IlnurBox 5.5\\Source\\IlnurBoxEditor.Target.cs"
 	],
-	"EngineVersion": "5.4.4"
+	"EngineVersion": "5.5.4"
 }

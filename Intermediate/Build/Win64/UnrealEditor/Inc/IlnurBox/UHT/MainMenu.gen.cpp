@@ -80,14 +80,14 @@ UMainMenu::~UMainMenu() {}
 // End Class UMainMenu
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMainMenu, UMainMenu::StaticClass, TEXT("UMainMenu"), &Z_Registration_Info_UClass_UMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainMenu), 541062900U) },
+		{ Z_Construct_UClass_UMainMenu, UMainMenu::StaticClass, TEXT("UMainMenu"), &Z_Registration_Info_UClass_UMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainMenu), 2104501513U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UserInterface_MainMenu_h_2812952643(TEXT("/Script/IlnurBox"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UserInterface_MainMenu_h_2502682377(TEXT("/Script/IlnurBox"),
+	Z_CompiledInDeferFile_FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UserInterface_MainMenu_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

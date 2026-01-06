@@ -14,35 +14,35 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ILNURBOX_ItemDataStructs_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h_32_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h_32_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemStatistics_Statics; \
 	ILNURBOX_API static class UScriptStruct* StaticStruct();
 
 
 template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemStatistics>();
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h_47_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h_47_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemTextData_Statics; \
 	ILNURBOX_API static class UScriptStruct* StaticStruct();
 
 
 template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemTextData>();
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h_65_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h_65_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemNumericData_Statics; \
 	ILNURBOX_API static class UScriptStruct* StaticStruct();
 
 
 template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemNumericData>();
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h_80_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h_80_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemAssetData_Statics; \
 	ILNURBOX_API static class UScriptStruct* StaticStruct();
 
 
 template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemAssetData>();
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h_92_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h_92_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemData_Statics; \
 	ILNURBOX_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -51,7 +51,7 @@ template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemAssetData>();
 template<> ILNURBOX_API UScriptStruct* StaticStruct<struct FItemData>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_Data_ItemDataStructs_h
+#define CURRENT_FILE_ID FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_Data_ItemDataStructs_h
 
 
 #define FOREACH_ENUM_EITEMQUALITY(op) \

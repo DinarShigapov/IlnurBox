@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ILNURBOX_UNoteWidget_generated_h
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUUNoteWidget(); \
 	friend struct Z_Construct_UClass_UUNoteWidget_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UUNoteWidget)
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UUNoteWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -37,12 +37,12 @@ public: \
 	NO_API virtual ~UUNoteWidget();
 
 
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_13_PROLOG
-#define FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_16_GENERATED_BODY \
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_13_PROLOG
+#define FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +50,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> ILNURBOX_API UClass* StaticClass<class UUNoteWidget>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_UNoteWidget_h
+#define CURRENT_FILE_ID FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_UNoteWidget_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

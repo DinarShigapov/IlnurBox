@@ -16,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define ILNURBOX_CharacterState_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_IlnurBoxProject_Source_IlnurBox_Public_CharacterState_h
+#define CURRENT_FILE_ID FID_Users_dinar_source_repos_DinarShigapov_IlnurBox_5_5_Source_IlnurBox_Public_CharacterState_h
 
 
 #define FOREACH_ENUM_ECHATACTERSTATE(op) \
